@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class BroadCategoryController: UITableViewController {
 
+    //This code is based upon the code in Mayfield's videos
+    var appDelegate: AppDelegate?
+    var context: NSManagedObjectContext?
+    var itemEntity: NSEntityDescription?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
+        itemEntity = NSEntityDescription.entity(forEntityName: "item", in:context!)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
