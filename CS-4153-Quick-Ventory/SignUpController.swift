@@ -10,9 +10,14 @@ import UIKit
 
 class SignUpController: UIViewController {
 
+    @IBOutlet weak var btnRest: UIButton!
+    @IBOutlet weak var btnEmp: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
+            btnEmp.backgroundColor = UIColor(red: 0.46, green: 0.11, blue: 0.11, alpha: 1.0)
+        
         // Do any additional setup after loading the view.
     }
     

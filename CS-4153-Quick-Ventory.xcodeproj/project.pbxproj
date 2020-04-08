@@ -15,6 +15,13 @@
 		2C7CF6E324386DA000613119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CF6E224386DA000613119 /* Assets.xcassets */; };
 		2C7CF6E624386DA000613119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CF6E424386DA000613119 /* LaunchScreen.storyboard */; };
 		40892D28243E301C0048E40C /* NewProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40892D27243E301C0048E40C /* NewProductController.swift */; };
+		84109BE9243E432C00CE4814 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BE8243E432C00CE4814 /* LoginScreenController.swift */; };
+		84109BEE243E435600CE4814 /* BroadCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BEA243E435600CE4814 /* BroadCategoryCell.swift */; };
+		84109BEF243E435600CE4814 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BEB243E435600CE4814 /* CategoryController.swift */; };
+		84109BF0243E435600CE4814 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BEC243E435600CE4814 /* CategoryCell.swift */; };
+		84109BF1243E435600CE4814 /* BroadCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BED243E435600CE4814 /* BroadCategoryController.swift */; };
+		84109BF4243E436400CE4814 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BF2243E436400CE4814 /* SignUpController.swift */; };
+		84109BF5243E436400CE4814 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BF3243E436400CE4814 /* UserProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		2C7CF6E524386DA000613119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C7CF6E724386DA000613119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40892D27243E301C0048E40C /* NewProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductController.swift; sourceTree = "<group>"; };
+		84109BE8243E432C00CE4814 /* LoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
+		84109BEA243E435600CE4814 /* BroadCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCategoryCell.swift; sourceTree = "<group>"; };
+		84109BEB243E435600CE4814 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		84109BEC243E435600CE4814 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		84109BED243E435600CE4814 /* BroadCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCategoryController.swift; sourceTree = "<group>"; };
+		84109BF2243E436400CE4814 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		84109BF3243E436400CE4814 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +78,13 @@
 				2C7CF6D824386D9F00613119 /* SceneDelegate.swift */,
 				2C7CF6DA24386D9F00613119 /* ViewController.swift */,
 				2C7CF6DC24386D9F00613119 /* Main.storyboard */,
+				84109BF2243E436400CE4814 /* SignUpController.swift */,
+				84109BF3243E436400CE4814 /* UserProfileController.swift */,
+				84109BEA243E435600CE4814 /* BroadCategoryCell.swift */,
+				84109BED243E435600CE4814 /* BroadCategoryController.swift */,
+				84109BEC243E435600CE4814 /* CategoryCell.swift */,
+				84109BEB243E435600CE4814 /* CategoryController.swift */,
+				84109BE8243E432C00CE4814 /* LoginScreenController.swift */,
 				40892D27243E301C0048E40C /* NewProductController.swift */,
 				2C7CF6E224386DA000613119 /* Assets.xcassets */,
 				2C7CF6E424386DA000613119 /* LaunchScreen.storyboard */,
@@ -145,10 +166,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				40892D28243E301C0048E40C /* NewProductController.swift in Sources */,
+				84109BEE243E435600CE4814 /* BroadCategoryCell.swift in Sources */,
+				84109BF5243E436400CE4814 /* UserProfileController.swift in Sources */,
 				2C7CF6DB24386D9F00613119 /* ViewController.swift in Sources */,
 				2C7CF6D724386D9F00613119 /* AppDelegate.swift in Sources */,
 				2C7CF6E124386D9F00613119 /* CS_4153_Quick_Ventory.xcdatamodeld in Sources */,
+				84109BF0243E435600CE4814 /* CategoryCell.swift in Sources */,
+				84109BF1243E435600CE4814 /* BroadCategoryController.swift in Sources */,
+				84109BEF243E435600CE4814 /* CategoryController.swift in Sources */,
 				2C7CF6D924386D9F00613119 /* SceneDelegate.swift in Sources */,
+				84109BF4243E436400CE4814 /* SignUpController.swift in Sources */,
+				84109BE9243E432C00CE4814 /* LoginScreenController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

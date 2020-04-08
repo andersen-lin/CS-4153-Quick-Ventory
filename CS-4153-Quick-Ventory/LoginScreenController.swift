@@ -8,15 +8,32 @@
 
 import UIKit
 
-class LoginScreenController: UIViewController {
+class LoginScreenController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet weak var eRest: UITextField!
+    @IBOutlet weak var eUN: UITextField!
+    @IBOutlet weak var ePW: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+        /* Tapping outside input dismisses keyboard. */
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+        eRest.delegate = self
+        eUN.delegate = self
+        ePW.delegate = self
     }
     
-
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Resign keyboard after return. 
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    
     /*
     // MARK: - Navigation
 
