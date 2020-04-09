@@ -281,7 +281,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="InventoryReportsButton" destination="TVx-ff-bTY" id="LLm-KZ-s64"/>
                         <outlet property="backButton" destination="lPE-25-NRG" id="yk5-bc-MTZ"/>
                         <outlet property="inventoryItemsButton" destination="zdj-9s-Nrl" id="ptI-Gx-Yiv"/>
                         <outlet property="inventoryReportsButton" destination="TVx-ff-bTY" id="mbA-EB-ZBo"/>
@@ -306,7 +305,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Mzt-rU-geP" customClass="BroadCategoryCell" customModule="CS_4153_Quick_Ventory" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BroadCategoryCell" id="Mzt-rU-geP" customClass="BroadCategoryCell" customModule="CS_4153_Quick_Ventory" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mzt-rU-geP" id="95h-Xg-rtJ">
@@ -345,6 +344,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Bhl-Rs-cHX" id="ice-8S-S9n"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -357,10 +359,13 @@
                         <viewLayoutGuide key="safeArea" id="N4a-LQ-H8P"/>
                     </view>
                     <navigationItem key="navigationItem" id="5BT-VL-AOJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="Bt3-h9-kra" id="Hgu-o2-5bh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bQe-AK-c0S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2023" y="100"/>
+            <point key="canvasLocation" x="2021.7391304347827" y="99.776785714285708"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hve-jX-UBn">

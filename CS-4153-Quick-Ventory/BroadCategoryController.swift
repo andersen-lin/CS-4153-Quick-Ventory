@@ -14,7 +14,10 @@ class BroadCategoryController: UITableViewController {
     //This code is based upon the code in Mayfield's videos
     var appDelegate: AppDelegate?
     var context: NSManagedObjectContext?
-    var itemEntity: NSEntityDescription?
+    var itemEntity: NSEntityDescription?    
+    
+    let broadCategorySource = ["Meat", "Cheese", "Vegetable"]
+    let broadCategoryImage = [UIImage(named: "broad_meat"), UIImage(named: "broad_cheese"), UIImage(named: "broad_vegetable")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,8 @@ class BroadCategoryController: UITableViewController {
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         context = appDelegate?.persistentContainer.viewContext
         itemEntity = NSEntityDescription.entity(forEntityName: "item", in:context!)
+    
+        self.tableView.register(BroadCategoryCell.self, forCellReuseIdentifier: "BroadCategoryCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,23 +38,23 @@ class BroadCategoryController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return broadCategorySource.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BroadCategoryCell", for: indexPath) as! BroadCategoryCell
 
         // Configure the cell...
-
+        cell.BroadCategoryLabel?.text =  broadCategorySource[indexPath[1]]
+        cell.BroadCategoryImage?.image = broadCategoryImage[indexPath[1]]
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
