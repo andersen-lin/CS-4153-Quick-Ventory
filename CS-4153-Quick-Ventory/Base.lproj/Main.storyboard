@@ -175,6 +175,9 @@
                                                     <constraint firstAttribute="height" constant="75" id="EFu-27-gfU"/>
                                                 </constraints>
                                                 <state key="normal" title="Register Restaurant"/>
+                                                <connections>
+                                                    <segue destination="Kw4-0e-2OQ" kind="show" id="9Jr-1a-ogO"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhg-va-tlf">
                                                 <rect key="frame" x="0.0" y="125" width="394" height="75"/>
@@ -183,6 +186,9 @@
                                                     <constraint firstAttribute="height" constant="75" id="BHA-1e-IqO"/>
                                                 </constraints>
                                                 <state key="normal" title="Register Employee"/>
+                                                <connections>
+                                                    <segue destination="8zm-kN-ZvV" kind="show" id="qmK-F2-co9"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -966,7 +972,7 @@
         <!--Sign Up Register Restaurant Controller-->
         <scene sceneID="4M2-CJ-Loj">
             <objects>
-                <viewController id="Kw4-0e-2OQ" userLabel="Sign Up Register Restaurant Controller" sceneMemberID="viewController">
+                <viewController id="Kw4-0e-2OQ" userLabel="Sign Up Register Restaurant Controller" customClass="SignUpRestViewController" customModule="CS_4153_Quick_Ventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cos-Zb-P5Y">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -982,7 +988,7 @@
         <!--Sign Up Register Restaurant Controller-->
         <scene sceneID="NGj-9b-ghc">
             <objects>
-                <viewController id="8zm-kN-ZvV" userLabel="Sign Up Register Restaurant Controller" sceneMemberID="viewController">
+                <viewController id="8zm-kN-ZvV" userLabel="Sign Up Register Restaurant Controller" customClass="SignUpUserViewController" customModule="CS_4153_Quick_Ventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1LS-lg-ghk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
