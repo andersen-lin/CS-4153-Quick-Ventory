@@ -1344,6 +1344,9 @@
                                             <constraint firstAttribute="height" constant="50" id="sLv-9C-2rG"/>
                                         </constraints>
                                         <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="btnNext:" destination="8zm-kN-ZvV" eventType="touchUpInside" id="zdm-ZD-8u8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1360,6 +1363,13 @@
                         <viewLayoutGuide key="safeArea" id="xCl-bE-0Jv"/>
                     </view>
                     <navigationItem key="navigationItem" id="m3L-DJ-YQV"/>
+                    <connections>
+                        <outlet property="eFName" destination="Ofe-eH-LaK" id="ixc-4L-Uw7"/>
+                        <outlet property="eLName" destination="WhS-WR-ZrH" id="hUR-e2-SE5"/>
+                        <outlet property="ePw" destination="XfV-fy-qjc" id="37W-6h-XwJ"/>
+                        <outlet property="ePwConfirm" destination="bqR-5s-t2f" id="Sdo-f1-MIx"/>
+                        <outlet property="eUsername" destination="o0d-bN-qaw" id="e9Z-l0-4HP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSe-d6-m4o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

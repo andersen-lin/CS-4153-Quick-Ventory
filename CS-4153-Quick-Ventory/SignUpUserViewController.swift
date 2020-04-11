@@ -8,15 +8,41 @@
 
 import UIKit
 
-class SignUpUserViewController: UIViewController {
+class SignUpUserViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var eFName: UITextField!
+    @IBOutlet weak var eLName: UITextField!
+    @IBOutlet weak var eUsername: UITextField!
+    @IBOutlet weak var ePw: UITextField!
+    @IBOutlet weak var ePwConfirm: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        /* Tapping outside input dismisses keyboard. */
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+        
+        eFName.delegate = self
+        eLName.delegate = self
+        eUsername.delegate = self
+        ePw.delegate = self
+        ePwConfirm.delegate = self
     }
     
 
+    @IBAction func btnNext(_ sender: UIButton) {
+        
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // Resign keyboard after return.
+        textField.resignFirstResponder()
+        return true
+    }
+    
     /*
     // MARK: - Navigation
 
