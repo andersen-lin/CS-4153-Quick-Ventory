@@ -71,6 +71,31 @@ class SignUpUserViewController: UIViewController, UITextFieldDelegate {
     }
       
     
+    func saveUser(){
+        // Do any additional setup after loading the view.
+        guard let uFN = eFName.text else { return }
+        guard let uLN = eLName.text else { return }
+        guard let uUN = eUsername.text else { return }
+        guard let uPW = ePw.text else { return }
+        guard let uPW2 = ePwConfirm.text else { return }
+        if uPW != uPW2 { return }
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let userEntity = NSEntityDescription.entity(forEntityName: "User", in:context)!
+        let loginEntity = NSEntityDescription.entity(forEntityName: "UserCredentials", in:context)!
+        
+        let user = NSManagedObject(entity: userEntity, insertInto: context)
+        
+//        user.setValue(eName.text, forKey: "name")
+//        user.setValue(eAdd1.text, forKey: "addressLine1")
+        
+        do {
+           try context.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
     
     
     
