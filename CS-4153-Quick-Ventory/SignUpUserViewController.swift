@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 
 class CellClass: UITableViewCell {
@@ -50,9 +50,30 @@ class SignUpUserViewController: UIViewController, UITextFieldDelegate {
         tableView.dataSource = self
         tableView.register(CellClass.self, forCellReuseIdentifier: "Cell")
         
+        loadRests()
     }
     
-
+    func loadRests(){
+           // Do any additional setup after loading the view.
+           
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Restaurant")
+           
+        do {
+            let result = try context.fetch(fetchReq)
+            for data in result as! [NSManagedObject] {
+                dataSource.append( data.value(forKey: "name") as! String )
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+      
+    
+    
+    
+    
     @IBAction func btnNext(_ sender: UIButton) {
         
         
@@ -66,7 +87,6 @@ class SignUpUserViewController: UIViewController, UITextFieldDelegate {
     
     //onClick
     @IBAction func cbRest(_ sender: Any) {
-         dataSource = ["Apple", "Mango", "Orange"]
               selectedButton = cbRest
               addTransparentView(frames: cbRest.frame)
     }
