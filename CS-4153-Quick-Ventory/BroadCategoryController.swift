@@ -16,12 +16,15 @@ class BroadCategoryController: UITableViewController {
     var context: NSManagedObjectContext?
     var itemEntity: NSEntityDescription?    
     
-    let broadCategorySource = ["Meat", "Cheese", "Vegetable"]
-    let broadCategoryImage = [UIImage(named: "broad_meat"), UIImage(named: "broad_cheese"), UIImage(named: "broad_vegetable")]
+    let broadCategorySource = ["Food and Beverage", "Tableware", "Cleaning Supplies"]
+    let broadCategoryImage = [UIImage(named: "broad_foodbeverage"), UIImage(named: "broad_tableware"), UIImage(named: "broad_cleaning")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Remove UITableView separator line
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
         appDelegate = UIApplication.shared.delegate as? AppDelegate
         context = appDelegate?.persistentContainer.viewContext
         itemEntity = NSEntityDescription.entity(forEntityName: "item", in:context!)

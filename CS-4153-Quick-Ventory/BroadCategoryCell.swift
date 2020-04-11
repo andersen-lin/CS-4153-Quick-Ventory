@@ -10,11 +10,10 @@ import UIKit
 
 class BroadCategoryCell: UITableViewCell {
 
-
     @IBOutlet weak var BroadCategoryImage: UIImageView!
     @IBOutlet weak var BroadCategoryLabel: UILabel!
     
-    /*override func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
@@ -23,5 +22,5 @@ class BroadCategoryCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }*/
+    }
 }

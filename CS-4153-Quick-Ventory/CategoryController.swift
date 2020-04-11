@@ -10,9 +10,16 @@ import UIKit
 
 class CategoryController: UITableViewController {
 
+    let foodbeverSource = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments"]
+    let foodbeverImage = [UIImage(named: "breads"), UIImage(named: "meats"), UIImage(named: "cheeses"), UIImage(named: "vegetables"), UIImage(named: "condiments")]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Remove UITableView separator line
+        self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        
+        self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,23 +31,23 @@ class CategoryController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return foodbeverSource.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as!CategoryCell
 
         // Configure the cell...
+        cell.CategoryLabel?.text =  foodbeverSource[indexPath[1]]
+        cell.CategoryImage?.image = foodbeverImage[indexPath[1]]
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
