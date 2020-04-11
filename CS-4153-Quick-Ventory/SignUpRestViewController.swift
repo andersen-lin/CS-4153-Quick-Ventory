@@ -61,8 +61,8 @@ class SignUpRestViewController: UIViewController, UITextFieldDelegate {
         let rest = NSManagedObject(entity: restEntity, insertInto: context)
         
         rest.setValue(eName.text, forKey: "name")
-        rest.setValue(eAdd1.text, forKey: "address1")
-        rest.setValue(eAdd2.text, forKey: "address2")
+        rest.setValue(eAdd1.text, forKey: "addressLine1")
+        rest.setValue(eAdd2.text, forKey: "addressLine2")
         rest.setValue(eCity.text, forKey: "city")
         rest.setValue(eState.text, forKey: "state")
         rest.setValue(eCountry.text, forKey: "country")
