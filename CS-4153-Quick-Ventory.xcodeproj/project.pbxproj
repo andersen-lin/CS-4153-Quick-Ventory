@@ -23,8 +23,8 @@
 		84109BF1243E435600CE4814 /* BroadCategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BED243E435600CE4814 /* BroadCategoryController.swift */; };
 		84109BF4243E436400CE4814 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BF2243E436400CE4814 /* SignUpController.swift */; };
 		84109BF5243E436400CE4814 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BF3243E436400CE4814 /* UserProfileController.swift */; };
-		84393BC12441386400B031DA /* SignUpRestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393BC02441386400B031DA /* SignUpRestViewController.swift */; };
-		84393BC32441387800B031DA /* SignUpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393BC22441387800B031DA /* SignUpUserViewController.swift */; };
+		84393BC9244143DC00B031DA /* SignUpRestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393BC8244143DC00B031DA /* SignUpRestViewController.swift */; };
+		84393BCB2441442900B031DA /* SignUpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393BCA2441442900B031DA /* SignUpUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +46,8 @@
 		84109BED243E435600CE4814 /* BroadCategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCategoryController.swift; sourceTree = "<group>"; };
 		84109BF2243E436400CE4814 /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
 		84109BF3243E436400CE4814 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
-		84393BC02441386400B031DA /* SignUpRestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRestViewController.swift; sourceTree = "<group>"; };
-		84393BC22441387800B031DA /* SignUpUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserViewController.swift; sourceTree = "<group>"; };
+		84393BC8244143DC00B031DA /* SignUpRestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRestViewController.swift; sourceTree = "<group>"; };
+		84393BCA2441442900B031DA /* SignUpUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,8 +80,6 @@
 		2C7CF6D524386D9F00613119 /* CS-4153-Quick-Ventory */ = {
 			isa = PBXGroup;
 			children = (
-				84393BC02441386400B031DA /* SignUpRestViewController.swift */,
-				84393BC22441387800B031DA /* SignUpUserViewController.swift */,
 				2C7CF6D624386D9F00613119 /* AppDelegate.swift */,
 				2C7CF6D824386D9F00613119 /* SceneDelegate.swift */,
 				2C7CF6DA24386D9F00613119 /* ViewController.swift */,
@@ -99,6 +97,8 @@
 				2C7CF6E424386DA000613119 /* LaunchScreen.storyboard */,
 				2C7CF6E724386DA000613119 /* Info.plist */,
 				2C7CF6DF24386D9F00613119 /* CS_4153_Quick_Ventory.xcdatamodeld */,
+				84393BC8244143DC00B031DA /* SignUpRestViewController.swift */,
+				84393BCA2441442900B031DA /* SignUpUserViewController.swift */,
 			);
 			path = "CS-4153-Quick-Ventory";
 			sourceTree = "<group>";
@@ -178,12 +178,12 @@
 				84109BEE243E435600CE4814 /* BroadCategoryCell.swift in Sources */,
 				84109BF5243E436400CE4814 /* UserProfileController.swift in Sources */,
 				2C7CF6DB24386D9F00613119 /* ViewController.swift in Sources */,
-				84393BC12441386400B031DA /* SignUpRestViewController.swift in Sources */,
+				84393BC9244143DC00B031DA /* SignUpRestViewController.swift in Sources */,
 				2C7CF6D724386D9F00613119 /* AppDelegate.swift in Sources */,
 				2C7CF6E124386D9F00613119 /* CS_4153_Quick_Ventory.xcdatamodeld in Sources */,
 				84109BF0243E435600CE4814 /* CategoryCell.swift in Sources */,
 				84109BF1243E435600CE4814 /* BroadCategoryController.swift in Sources */,
-				84393BC32441387800B031DA /* SignUpUserViewController.swift in Sources */,
+				84393BCB2441442900B031DA /* SignUpUserViewController.swift in Sources */,
 				84109BEF243E435600CE4814 /* CategoryController.swift in Sources */,
 				2C7CF6D924386D9F00613119 /* SceneDelegate.swift in Sources */,
 				40892D2A2440E4F80048E40C /* InventoryReportsController.swift in Sources */,
