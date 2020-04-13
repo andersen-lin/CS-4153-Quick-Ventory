@@ -11,14 +11,18 @@ import UIKit
 class CategoryController: UITableViewController {
 
     let foodbeverSource = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments"]
-    let testSource = ["xxx", "xxx", "xxx", "xxx", "xxx"]
+    let tablewareSource = ["Utensils", "Containers and Plates", "Cups", "Napkins", "Sauce Packets"]
+    let cleaningSource = ["Chemicals", "Toiletries", "Cleaning Tools"]
+    
     let foodbeverImage = [UIImage(named: "breads"), UIImage(named: "meats"), UIImage(named: "cheeses"), UIImage(named: "vegetables"), UIImage(named: "condiments")]
+    let tablewareImage = [UIImage(named: "utensils"), UIImage(named: "platescontainers"), UIImage(named: "cups"), UIImage(named: "napkins"), UIImage(named: "saucepackets")]
+    let cleaningImage = [UIImage(named: "chemicals"), UIImage(named: "toiletries"), UIImage(named: "cleaningtools")]
     
     var passedValue: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(passedValue)
+        
         // Remove UITableView separator line
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
@@ -44,8 +48,10 @@ class CategoryController: UITableViewController {
         switch passedValue {
         case "Food and Beverage":
             return foodbeverSource.count
+        case "Tableware":
+            return tablewareSource.count
         default:
-            return testSource.count
+            return cleaningSource.count
         }
     }
 
@@ -57,11 +63,13 @@ class CategoryController: UITableViewController {
         case "Food and Beverage":
             cell.CategoryLabel?.text =  foodbeverSource[indexPath[1]]
             cell.CategoryImage?.image = foodbeverImage[indexPath[1]]
+        case "Tableware":
+            cell.CategoryLabel?.text =  tablewareSource[indexPath[1]]
+            cell.CategoryImage?.image = tablewareImage[indexPath[1]]
         default:
-            cell.CategoryLabel?.text =  testSource[indexPath[1]]
-            cell.CategoryImage?.image = foodbeverImage[indexPath[1]]
+            cell.CategoryLabel?.text =  cleaningSource[indexPath[1]]
+            cell.CategoryImage?.image = cleaningImage[indexPath[1]]
         }
-
         
         return cell
     }

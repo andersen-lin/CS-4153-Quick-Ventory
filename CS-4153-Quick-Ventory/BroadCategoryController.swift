@@ -102,14 +102,12 @@ class BroadCategoryController: UITableViewController {
     */
 
     // MARK: - Navigation
-
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         // Get Cell Label
         let indexPath = tableView.indexPathForSelectedRow!
-        // print(indexPath)
         let currentCell = tableView.cellForRow(at: indexPath) as! BroadCategoryCell
+        
         broadCategoryToPass = currentCell.BroadCategoryLabel?.text
         performSegue(withIdentifier: "ToCategory", sender: self)
     }
@@ -123,8 +121,6 @@ class BroadCategoryController: UITableViewController {
             let viewController = segue.destination as! CategoryController
             
             viewController.passedValue = broadCategoryToPass
-            // print(broadCategoryToPass)
-            // print(viewController.passedValue)
         }
     }
 }
