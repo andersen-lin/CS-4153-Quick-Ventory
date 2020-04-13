@@ -19,9 +19,14 @@ class BroadCategoryController: UITableViewController {
     let broadCategorySource = ["Food and Beverage", "Tableware", "Cleaning Supplies"]
     let broadCategoryImage = [UIImage(named: "broad_foodbeverage"), UIImage(named: "broad_tableware"), UIImage(named: "broad_cleaning")]
     
+    var broadCategoryToPass: String!
+    
+    @IBOutlet weak var broadTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Remove UITableView separator line
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
@@ -30,6 +35,8 @@ class BroadCategoryController: UITableViewController {
         itemEntity = NSEntityDescription.entity(forEntityName: "item", in:context!)
     
         self.tableView.register(BroadCategoryCell.self, forCellReuseIdentifier: "BroadCategoryCell")
+        
+        broadTableView.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -94,14 +101,30 @@ class BroadCategoryController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow!
+        // print(indexPath)
+        let currentCell = tableView.cellForRow(at: indexPath) as! BroadCategoryCell
+        broadCategoryToPass = currentCell.BroadCategoryLabel?.text
+        performSegue(withIdentifier: "ToCategory", sender: self)
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "ToCategory") {
+            
+            let viewController = segue.destination as! CategoryController
+            
+            viewController.passedValue = broadCategoryToPass
+            // print(broadCategoryToPass)
+            // print(viewController.passedValue)
+        }
     }
-    */
-
 }
