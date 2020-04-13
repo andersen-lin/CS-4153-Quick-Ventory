@@ -562,8 +562,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbY-WT-mKt">
-                                <rect key="frame" x="148.33333333333334" y="108" width="117.66666666666666" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vbY-WT-mKt">
+                                <rect key="frame" x="20" y="108" width="374" height="52"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -608,8 +608,10 @@
                             <constraint firstItem="vbY-WT-mKt" firstAttribute="top" secondItem="erj-kX-RJA" secondAttribute="top" constant="20" id="1N4-Mo-azd"/>
                             <constraint firstItem="erj-kX-RJA" firstAttribute="bottom" secondItem="2hf-HJ-cvQ" secondAttribute="bottom" constant="20" id="43S-ne-oAX"/>
                             <constraint firstItem="erj-kX-RJA" firstAttribute="trailing" secondItem="2hf-HJ-cvQ" secondAttribute="trailing" constant="100" id="4xN-DK-sSc"/>
+                            <constraint firstItem="vbY-WT-mKt" firstAttribute="leading" secondItem="erj-kX-RJA" secondAttribute="leading" constant="20" id="Kaw-zE-wyi"/>
                             <constraint firstItem="y99-UH-Nxq" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" id="Vh7-ys-w7v"/>
                             <constraint firstItem="XLm-JQ-njp" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" constant="2" id="arb-PO-GMo"/>
+                            <constraint firstItem="erj-kX-RJA" firstAttribute="trailing" secondItem="vbY-WT-mKt" secondAttribute="trailing" constant="20" id="ex8-Kr-s5a"/>
                             <constraint firstItem="vbY-WT-mKt" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" id="lLJ-42-gJS"/>
                             <constraint firstItem="XLm-JQ-njp" firstAttribute="centerY" secondItem="BsB-BU-LVk" secondAttribute="centerY" constant="2.5" id="t5o-cu-Vwh"/>
                             <constraint firstItem="y99-UH-Nxq" firstAttribute="top" secondItem="vbY-WT-mKt" secondAttribute="bottom" constant="5" id="urY-lI-n5S"/>
@@ -626,7 +628,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CK-gU-Af3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3703" y="96"/>
+            <point key="canvasLocation" x="3702.898550724638" y="95.758928571428569"/>
         </scene>
         <!--User Profile Controller-->
         <scene sceneID="XzF-Va-hWT">
