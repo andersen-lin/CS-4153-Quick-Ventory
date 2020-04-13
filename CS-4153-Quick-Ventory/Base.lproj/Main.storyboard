@@ -527,7 +527,6 @@
                                         <connections>
                                             <outlet property="CategoryImage" destination="qPf-1V-kZY" id="qGI-gr-tEO"/>
                                             <outlet property="CategoryLabel" destination="LxH-Bd-X5L" id="9Zp-Ny-uhW"/>
-                                            <segue destination="5I0-1H-KYX" kind="show" id="Vm2-Zl-hHr"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -546,15 +545,19 @@
                         <viewLayoutGuide key="safeArea" id="WfX-qG-139"/>
                     </view>
                     <navigationItem key="navigationItem" id="DLS-2A-LXz"/>
+                    <connections>
+                        <outlet property="detailedTableView" destination="7Yx-Z7-775" id="DVb-sR-DZD"/>
+                        <segue destination="5I0-1H-KYX" kind="show" identifier="ToModify" id="vbX-Do-UGF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fuE-At-2Md" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3021.739130434783" y="99.776785714285708"/>
+            <point key="canvasLocation" x="2903" y="96"/>
         </scene>
-        <!--View Controller-->
+        <!--Modify Controller-->
         <scene sceneID="Jbe-hB-yEH">
             <objects>
-                <viewController id="5I0-1H-KYX" sceneMemberID="viewController">
+                <viewController id="5I0-1H-KYX" customClass="ModifyController" customModule="CS_4153_Quick_Ventory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BsB-BU-LVk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -615,10 +618,15 @@
                         <viewLayoutGuide key="safeArea" id="erj-kX-RJA"/>
                     </view>
                     <navigationItem key="navigationItem" id="XkK-0p-SmN"/>
+                    <connections>
+                        <outlet property="broadCategoryInfo" destination="y99-UH-Nxq" id="EOb-2o-3I6"/>
+                        <outlet property="categoryInfo" destination="vbY-WT-mKt" id="Jfb-zf-HpT"/>
+                        <outlet property="quantity" destination="XLm-JQ-njp" id="2IZ-Ul-3IA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2CK-gU-Af3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4100" y="95.758928571428569"/>
+            <point key="canvasLocation" x="3703" y="96"/>
         </scene>
         <!--User Profile Controller-->
         <scene sceneID="XzF-Va-hWT">

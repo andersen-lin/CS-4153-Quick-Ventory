@@ -120,7 +120,7 @@ class BroadCategoryController: UITableViewController {
             
             let viewController = segue.destination as! CategoryController
             
-            viewController.passedValue = broadCategoryToPass
+            viewController.passedBroadCategory = broadCategoryToPass
         }
     }
 }

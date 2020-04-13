@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class CategoryController: UITableViewController {
 
+    var appDelegate: AppDelegate?
+    var context: NSManagedObjectContext?
+    var itemEntity: NSEntityDescription?
+    
     let foodbeverSource = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments"]
     let tablewareSource = ["Utensils", "Containers and Plates", "Cups", "Napkins", "Sauce Packets"]
     let cleaningSource = ["Chemicals", "Toiletries", "Cleaning Tools"]
@@ -18,7 +23,10 @@ class CategoryController: UITableViewController {
     let tablewareImage = [UIImage(named: "utensils"), UIImage(named: "platescontainers"), UIImage(named: "cups"), UIImage(named: "napkins"), UIImage(named: "saucepackets")]
     let cleaningImage = [UIImage(named: "chemicals"), UIImage(named: "toiletries"), UIImage(named: "cleaningtools")]
     
-    var passedValue: String!
+    var passedBroadCategory: String!
+    var categoryToPass: [String]!
+    
+    @IBOutlet weak var detailedTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +34,13 @@ class CategoryController: UITableViewController {
         // Remove UITableView separator line
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
+        itemEntity = NSEntityDescription.entity(forEntityName: "item", in:context!)
+        
         self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         
-        // print(passedValue)
+        detailedTableView.delegate = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -45,7 +57,7 @@ class CategoryController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        switch passedValue {
+        switch passedBroadCategory {
         case "Food and Beverage":
             return foodbeverSource.count
         case "Tableware":
@@ -59,7 +71,7 @@ class CategoryController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
 
         // Configure the cell...
-        switch passedValue {
+        switch passedBroadCategory {
         case "Food and Beverage":
             cell.CategoryLabel?.text =  foodbeverSource[indexPath[1]]
             cell.CategoryImage?.image = foodbeverImage[indexPath[1]]
@@ -109,14 +121,28 @@ class CategoryController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
+     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+         // Get Cell Label
+         let indexPath = tableView.indexPathForSelectedRow!
+         let currentCell = tableView.cellForRow(at: indexPath) as! CategoryCell
+         
+        categoryToPass = [passedBroadCategory, currentCell.CategoryLabel!.text!]
+         performSegue(withIdentifier: "ToModify", sender: self)
+     }
+     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "ToModify") {
+            
+            let viewController = segue.destination as! ModifyController
+            
+            viewController.passedCategory = categoryToPass
+        }
     }
-    */
 
 }

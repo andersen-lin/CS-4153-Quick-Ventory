@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C7783FB244426EC002F8B54 /* ModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7783FA244426EC002F8B54 /* ModifyController.swift */; };
 		2C7CF6D724386D9F00613119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CF6D624386D9F00613119 /* AppDelegate.swift */; };
 		2C7CF6D924386D9F00613119 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CF6D824386D9F00613119 /* SceneDelegate.swift */; };
 		2C7CF6DB24386D9F00613119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CF6DA24386D9F00613119 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C7783FA244426EC002F8B54 /* ModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyController.swift; sourceTree = "<group>"; };
 		2C7CF6D324386D9F00613119 /* CS-4153-Quick-Ventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS-4153-Quick-Ventory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C7CF6D624386D9F00613119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C7CF6D824386D9F00613119 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				2C7CF6D824386D9F00613119 /* SceneDelegate.swift */,
 				2C7CF6DA24386D9F00613119 /* ViewController.swift */,
 				2C7CF6DC24386D9F00613119 /* Main.storyboard */,
+				2C7783FA244426EC002F8B54 /* ModifyController.swift */,
 				40892D292440E4F80048E40C /* InventoryReportsController.swift */,
 				84109BF2243E436400CE4814 /* SignUpController.swift */,
 				84109BF3243E436400CE4814 /* UserProfileController.swift */,
@@ -187,6 +190,7 @@
 				84109BEF243E435600CE4814 /* CategoryController.swift in Sources */,
 				2C7CF6D924386D9F00613119 /* SceneDelegate.swift in Sources */,
 				40892D2A2440E4F80048E40C /* InventoryReportsController.swift in Sources */,
+				2C7783FB244426EC002F8B54 /* ModifyController.swift in Sources */,
 				84109BF4243E436400CE4814 /* SignUpController.swift in Sources */,
 				84109BE9243E432C00CE4814 /* LoginScreenController.swift in Sources */,
 			);
