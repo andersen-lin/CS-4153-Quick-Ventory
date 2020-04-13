@@ -799,30 +799,45 @@
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Breads"/>
+                                        <connections>
+                                            <action selector="foodAndBevTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="6TV-Ao-zDc"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXe-6N-Jgg">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Meats"/>
+                                        <connections>
+                                            <action selector="foodAndBevTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="x5P-Ke-L4z"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sd-Ro-pn1">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Cheeses"/>
+                                        <connections>
+                                            <action selector="foodAndBevTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="GY2-fp-mvH"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ve6-AY-jnv">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Vegetables"/>
+                                        <connections>
+                                            <action selector="foodAndBevTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="8n2-T9-Gc5"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odz-ZR-6Q3">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Condiments"/>
+                                        <connections>
+                                            <action selector="foodAndBevTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="Nfq-fi-Xh8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -858,24 +873,36 @@
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Utensils"/>
+                                        <connections>
+                                            <action selector="tableWareTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="QlZ-w8-1Rh"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eh-cJ-zXB">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Containers and Plates"/>
+                                        <connections>
+                                            <action selector="tableWareTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="7LL-QP-2Cx"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hb7-zn-y3h">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Cups"/>
+                                        <connections>
+                                            <action selector="tableWareTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="9kz-m8-Yfu"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFG-t3-AXt">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Napkins and Sauce Packs"/>
+                                        <connections>
+                                            <action selector="tableWareTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="z3I-Ut-89h"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -909,18 +936,27 @@
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Chemicals"/>
+                                        <connections>
+                                            <action selector="cleaningSuppliesTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="g7m-ZC-1lq"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toJ-5L-VZY">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Toiletries"/>
+                                        <connections>
+                                            <action selector="cleaningSuppliesTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="2dQ-b7-7vB"/>
+                                        </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsk-i4-g5i">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Cleaning Tools"/>
+                                        <connections>
+                                            <action selector="cleaningSuppliesTapped:" destination="Uls-VM-KaF" eventType="touchUpInside" id="sxi-8K-ner"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -941,6 +977,9 @@
                                 <state key="normal" title="Add Item">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addItemBtn:" destination="Uls-VM-KaF" eventType="touchUpInside" id="cSX-s2-5sY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -973,6 +1012,7 @@
                     <connections>
                         <outlet property="cleaningSuppliesButton" destination="9qx-LF-8HX" id="csm-rz-bUa"/>
                         <outlet property="foodAndBevButton" destination="DQa-aP-wBy" id="rVg-Hq-PBB"/>
+                        <outlet property="productName" destination="1tB-Zi-nD6" id="tNP-vK-wpi"/>
                         <outlet property="tableWareButton" destination="Gip-NY-uqs" id="U2Q-06-e14"/>
                         <outletCollection property="broadCategories" destination="Kmn-rH-kpz" collectionClass="NSMutableArray" id="7tq-Cu-uEh"/>
                         <outletCollection property="broadCategories" destination="4aE-Rx-QjS" collectionClass="NSMutableArray" id="N0l-5s-Dj8"/>
