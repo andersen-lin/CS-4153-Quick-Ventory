@@ -1,37 +1,27 @@
 //
-//  CategoryController.swift
+//  ProductController.swift
 //  CS-4153-Quick-Ventory
 //
-//  Created by jacob mathews on 4/5/20.
+//  Created by jacob mathews on 4/14/20.
 //  Copyright © 2020 Oklahoma State University. All rights reserved.
 //
 
 import UIKit
 import CoreData
 
-class CategoryController: UITableViewController {
+class ProductController: UITableViewController {
 
     var appDelegate: AppDelegate?
     var context: NSManagedObjectContext?
     var itemEntity: NSEntityDescription?
     
-    let foodbeverSource = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments"]
-    let tablewareSource = ["Utensils", "Containers and Plates", "Cups", "Napkins", "Sauce Packets"]
-    let cleaningSource = ["Chemicals", "Toiletries", "Cleaning Tools"]
+    var passedCategory: String!
     
-    let foodbeverImage = [UIImage(named: "breads"), UIImage(named: "meats"), UIImage(named: "cheeses"), UIImage(named: "vegetables"), UIImage(named: "condiments")]
-    let tablewareImage = [UIImage(named: "utensils"), UIImage(named: "platescontainers"), UIImage(named: "cups"), UIImage(named: "napkins"), UIImage(named: "saucepackets")]
-    let cleaningImage = [UIImage(named: "chemicals"), UIImage(named: "toiletries"), UIImage(named: "cleaningtools")]
-    
-    var passedBroadCategory: String!
-    var categoryToPass: String!
-    
-    @IBOutlet weak var detailedTableView: UITableView!
+    @IBOutlet weak var productTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Remove UITableView separator line
         self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         
         appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -40,7 +30,8 @@ class CategoryController: UITableViewController {
         
         self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
         
-        detailedTableView.delegate = self
+        productTableView.delegate = self
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -52,39 +43,23 @@ class CategoryController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        switch passedBroadCategory {
-        case "Food and Beverage":
-            return foodbeverSource.count
-        case "Tableware":
-            return tablewareSource.count
-        default:
-            return cleaningSource.count
-        }
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        switch passedBroadCategory {
-        case "Food and Beverage":
-            cell.CategoryLabel?.text =  foodbeverSource[indexPath[1]]
-            cell.CategoryImage?.image = foodbeverImage[indexPath[1]]
-        case "Tableware":
-            cell.CategoryLabel?.text =  tablewareSource[indexPath[1]]
-            cell.CategoryImage?.image = tablewareImage[indexPath[1]]
-        default:
-            cell.CategoryLabel?.text =  cleaningSource[indexPath[1]]
-            cell.CategoryImage?.image = cleaningImage[indexPath[1]]
-        }
-        
+
         return cell
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -121,28 +96,33 @@ class CategoryController: UITableViewController {
     }
     */
 
+    /*
     // MARK: - Navigation
-
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-         // Get Cell Label
-         let indexPath = tableView.indexPathForSelectedRow!
-         let currentCell = tableView.cellForRow(at: indexPath) as! CategoryCell
-         
-        categoryToPass = currentCell.CategoryLabel!.text!
-         performSegue(withIdentifier: "ToProduct", sender: self)
+          // Get Cell Label
+          let indexPath = tableView.indexPathForSelectedRow!
+          let currentCell = tableView.cellForRow(at: indexPath) as! ProductCell
+          
+         productToPass = currentCell.ProductLabel!.text!
+          performSegue(withIdentifier: "ToModify", sender: self)
+      }
+      
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         if (segue.identifier == "ToModify") {
+             
+             let viewController = segue.destination as! ProductController
+             
+             viewController.passedProduct = productToPass
+         }
      }
-     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
+    // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if (segue.identifier == "ToProduct") {
-            
-            let viewController = segue.destination as! ProductController
-            
-            viewController.passedCategory = categoryToPass
-        }
     }
+    */
 
 }
