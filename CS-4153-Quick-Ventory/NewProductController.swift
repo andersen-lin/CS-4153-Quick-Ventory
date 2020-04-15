@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 class NewProductController: UIViewController, UITextFieldDelegate {
-    @IBOutlet var broadCategories: [UIButton]!
+    @IBOutlet var broadCategories: [UIButton]! //declaring buttons
    
     @IBOutlet var foodAndBevCategories: [UIButton]!
     @IBOutlet weak var foodAndBevButton: UIButton!
@@ -22,19 +22,19 @@ class NewProductController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cleaningSuppliesButton: UIButton!
     
     
-    @IBOutlet weak var productName: UITextField!
+    @IBOutlet weak var productName: UITextField! //text entry field
     
-    public var categorySelection :String = ""
+    public var categorySelection :String = "" //holders for user selection
     public var subCategorySelection : String = ""
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        foodAndBevButton.isHidden = true
+        foodAndBevButton.isHidden = true //hiding buttons on open
         tableWareButton.isHidden = true
         cleaningSuppliesButton.isHidden = true
         
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        let tap = UITapGestureRecognizer(target: self.view, action:  #selector(UIView.endEditing)) //this kills the keyboard
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
@@ -43,11 +43,13 @@ class NewProductController: UIViewController, UITextFieldDelegate {
     
     
     
-    @IBAction func addItemBtn(_ sender: UIButton) {
+    @IBAction func addItemBtn(_ sender: UIButton) { //saves the item
         saveItem()
+        showSimpleAlert()
+        
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool { //returns text field
         // Resign keyboard after return.
         textField.resignFirstResponder()
         return true
@@ -62,7 +64,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         
         let item = NSManagedObject(entity: itemEntity, insertInto: context)
         
-        item.setValue(productName.text, forKey: "name")
+        item.setValue(productName.text, forKey: "name") //inserts item using given and selected info
         item.setValue(categorySelection, forKey: "category")
         item.setValue(subCategorySelection, forKey: "sub_category")
         item.setValue(categorySelection, forKey: "category_image_name")
@@ -113,7 +115,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
     }
     
     enum broadCats: String {
-        case foodBeverage = "Food & Beverage"
+        case foodBeverage = "Food & Beverage" //declaring cases
         case tableware = "Tableware"
         case cleaningSupplies = "Cleaning Supplies"
     }
@@ -124,7 +126,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
             return
         }
         switch broadCat {
-        case .foodBeverage:
+        case .foodBeverage: //hides all other buttons, displays chosen case
             foodAndBevButton.isHidden = false
             tableWareButton.isHidden = true
             cleaningSuppliesButton.isHidden = true
@@ -136,14 +138,11 @@ class NewProductController: UIViewController, UITextFieldDelegate {
             foodAndBevButton.isHidden = true
             categorySelection = "tableware"
 
-        case .cleaningSupplies:
+        default:
             cleaningSuppliesButton.isHidden = false
             foodAndBevButton.isHidden = true
             tableWareButton.isHidden = true
             categorySelection = "cleaning supplies"
-
-        default:
-            return
             
         }
 // will handle individual categories when tapped
@@ -161,7 +160,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        switch foodAndBev {
+        switch foodAndBev { //marks the subcategory holder with the subcategory tapped
         case .breads:
             subCategorySelection = "breads"
         case .meats:
@@ -189,7 +188,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        switch tableWare {
+        switch tableWare {//marks the subcategory holder with the subcategory tapped
         case .utensils:
             subCategorySelection = "utensils"
         case .containersAndPlates:
@@ -214,7 +213,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        switch cleaningSupply {
+        switch cleaningSupply {//marks the subcategory holder with the subcategory tapped
         case .chemicals:
             subCategorySelection = "chemicals"
         case .toiletries:
@@ -224,6 +223,18 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         default:
             return
         }
+    }
+    
+    func showSimpleAlert() { //shows an alert confirming the addition of an item
+        let alert = UIAlertController(title: "Success", message: "Item has been successfully added to the inventory", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+
+            self.dismiss(animated: true, completion: nil)//Cancel Action
+        }))
+
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
