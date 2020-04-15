@@ -15,7 +15,11 @@ class ProductController: UITableViewController {
     var context: NSManagedObjectContext?
     var itemEntity: NSEntityDescription?
     
+    let breadsSource = ["White", "Wheat"]
+    let breadsImage = [UIImage(named: "white_bread"), UIImage(named: "wheat_bread")]
+    
     var passedCategory: String!
+    var productToPass: String!
     
     @IBOutlet weak var productTableView: UITableView!
     
@@ -28,10 +32,10 @@ class ProductController: UITableViewController {
         context = appDelegate?.persistentContainer.viewContext
         itemEntity = NSEntityDescription.entity(forEntityName: "item", in:context!)
         
-        self.tableView.register(CategoryCell.self, forCellReuseIdentifier: "CategoryCell")
+        self.tableView.register(ProductCell.self, forCellReuseIdentifier: "ProductCell")
         
         productTableView.delegate = self
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -43,23 +47,33 @@ class ProductController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        switch passedCategory {
+        case "Breads":
+            return breadsSource.count
+        default:
+            return breadsSource.count
+        }
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductCell
 
         // Configure the cell...
-
+        switch passedCategory {
+        case "Breads":
+            cell.ProductLabel?.text =  breadsSource[indexPath[1]]
+            cell.ProductImage?.image = breadsImage[indexPath[1]]
+        default:
+            cell.ProductLabel?.text =  "XXX"
+            cell.ProductImage?.image = breadsImage[indexPath[1]]
+        }
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -96,7 +110,6 @@ class ProductController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
      override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
@@ -104,7 +117,7 @@ class ProductController: UITableViewController {
           let indexPath = tableView.indexPathForSelectedRow!
           let currentCell = tableView.cellForRow(at: indexPath) as! ProductCell
           
-         productToPass = currentCell.ProductLabel!.text!
+          productToPass = currentCell.ProductLabel!.text!
           performSegue(withIdentifier: "ToModify", sender: self)
       }
       
@@ -114,15 +127,12 @@ class ProductController: UITableViewController {
          // Pass the selected object to the new view controller.
          if (segue.identifier == "ToModify") {
              
-             let viewController = segue.destination as! ProductController
+             let viewController = segue.destination as! ModifyController
              
-             viewController.passedProduct = productToPass
+             viewController.passedProduct = [productToPass, passedCategory]
          }
      }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
-
-}

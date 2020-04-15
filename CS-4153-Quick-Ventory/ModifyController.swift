@@ -10,18 +10,18 @@ import UIKit
 
 class ModifyController: UIViewController {
 
-    var passedCategory: [String]!
+    var passedProduct: [String]!
     
+    @IBOutlet weak var productInfo: UILabel!
     @IBOutlet weak var categoryInfo: UILabel!
-    @IBOutlet weak var broadCategoryInfo: UILabel!
     @IBOutlet weak var quantity: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        categoryInfo.text = passedCategory[1]
-        broadCategoryInfo.text = passedCategory[0]
+        productInfo.text = passedProduct[0]
+        categoryInfo.text = passedProduct[1]
     }
     
 

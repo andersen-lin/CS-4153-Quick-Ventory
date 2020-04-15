@@ -129,7 +129,7 @@ class CategoryController: UITableViewController {
          let indexPath = tableView.indexPathForSelectedRow!
          let currentCell = tableView.cellForRow(at: indexPath) as! CategoryCell
          
-        categoryToPass = currentCell.CategoryLabel!.text!
+         categoryToPass = currentCell.CategoryLabel!.text!
          performSegue(withIdentifier: "ToProduct", sender: self)
      }
      
