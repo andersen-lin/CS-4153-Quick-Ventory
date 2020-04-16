@@ -33,6 +33,23 @@
 		84393BCB2441442900B031DA /* SignUpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393BCA2441442900B031DA /* SignUpUserViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		40465F1824489A95009F75DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40465F1324489A95009F75DE /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A1C1B977ED8804E8AEEC884E7359EE58;
+			remoteInfo = Charts;
+		};
+		40465F1A24489A95009F75DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40465F1324489A95009F75DE /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8918E2D4CC258AE980E45F9B548BD2DA;
+			remoteInfo = "Pods-CS-4153-Quick-Ventory";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2C7783FA244426EC002F8B54 /* ModifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyController.swift; sourceTree = "<group>"; };
 		2C7CF6D324386D9F00613119 /* CS-4153-Quick-Ventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS-4153-Quick-Ventory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +63,7 @@
 		2C7CF6E724386DA000613119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40465F0F2448923D009F75DE /* BarChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartController.swift; sourceTree = "<group>"; };
 		40465F112448925C009F75DE /* CircleChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartController.swift; sourceTree = "<group>"; };
+		40465F1324489A95009F75DE /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		40892D27243E301C0048E40C /* NewProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductController.swift; sourceTree = "<group>"; };
 		40892D292440E4F80048E40C /* InventoryReportsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReportsController.swift; sourceTree = "<group>"; };
 		40892D33244686F20048E40C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
@@ -79,6 +97,7 @@
 		2C7CF6CA24386D9F00613119 = {
 			isa = PBXGroup;
 			children = (
+				40465F1324489A95009F75DE /* Pods.xcodeproj */,
 				2C7CF6D524386D9F00613119 /* CS-4153-Quick-Ventory */,
 				2C7CF6D424386D9F00613119 /* Products */,
 				EEEBAE741F532BD20E161275 /* Pods */,
@@ -123,6 +142,15 @@
 				84393BCA2441442900B031DA /* SignUpUserViewController.swift */,
 			);
 			path = "CS-4153-Quick-Ventory";
+			sourceTree = "<group>";
+		};
+		40465F1424489A95009F75DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40465F1924489A95009F75DE /* Charts.framework */,
+				40465F1B24489A95009F75DE /* Pods_CS_4153_Quick_Ventory.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		52B015EA941578E304FA254E /* Frameworks */ = {
@@ -190,12 +218,35 @@
 			mainGroup = 2C7CF6CA24386D9F00613119;
 			productRefGroup = 2C7CF6D424386D9F00613119 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 40465F1424489A95009F75DE /* Products */;
+					ProjectRef = 40465F1324489A95009F75DE /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				2C7CF6D224386D9F00613119 /* CS-4153-Quick-Ventory */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		40465F1924489A95009F75DE /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 40465F1824489A95009F75DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		40465F1B24489A95009F75DE /* Pods_CS_4153_Quick_Ventory.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Pods_CS_4153_Quick_Ventory.framework;
+			remoteRef = 40465F1A24489A95009F75DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2C7CF6D124386D9F00613119 /* Resources */ = {
