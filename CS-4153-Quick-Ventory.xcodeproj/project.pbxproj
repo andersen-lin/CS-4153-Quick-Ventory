@@ -30,6 +30,7 @@
 		84109BF5243E436400CE4814 /* UserProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BF3243E436400CE4814 /* UserProfileController.swift */; };
 		84393BC9244143DC00B031DA /* SignUpRestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393BC8244143DC00B031DA /* SignUpRestViewController.swift */; };
 		84393BCB2441442900B031DA /* SignUpUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84393BCA2441442900B031DA /* SignUpUserViewController.swift */; };
+		C14B1137F3097024E7EAEEC4 /* Pods_CS_4153_Quick_Ventory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C53EBFE105E593248BCC189 /* Pods_CS_4153_Quick_Ventory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		40892D292440E4F80048E40C /* InventoryReportsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReportsController.swift; sourceTree = "<group>"; };
 		40892D33244686F20048E40C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		40892D35244687120048E40C /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		7C53EBFE105E593248BCC189 /* Pods_CS_4153_Quick_Ventory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_4153_Quick_Ventory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84109BE8243E432C00CE4814 /* LoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
 		84109BEA243E435600CE4814 /* BroadCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCategoryCell.swift; sourceTree = "<group>"; };
 		84109BEB243E435600CE4814 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		84109BF3243E436400CE4814 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		84393BC8244143DC00B031DA /* SignUpRestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRestViewController.swift; sourceTree = "<group>"; };
 		84393BCA2441442900B031DA /* SignUpUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserViewController.swift; sourceTree = "<group>"; };
+		9842897CE48059E85CC24E59 /* Pods-CS-4153-Quick-Ventory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS-4153-Quick-Ventory.release.xcconfig"; path = "Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory.release.xcconfig"; sourceTree = "<group>"; };
+		F626E6C0E143914F56BC1B06 /* Pods-CS-4153-Quick-Ventory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS-4153-Quick-Ventory.debug.xcconfig"; path = "Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C14B1137F3097024E7EAEEC4 /* Pods_CS_4153_Quick_Ventory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,8 @@
 			children = (
 				2C7CF6D524386D9F00613119 /* CS-4153-Quick-Ventory */,
 				2C7CF6D424386D9F00613119 /* Products */,
+				C2BF3C5068224D4C9435139E /* Pods */,
+				6B81A6AB2FEB8DA4EBA9A84D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,6 +125,24 @@
 			path = "CS-4153-Quick-Ventory";
 			sourceTree = "<group>";
 		};
+		6B81A6AB2FEB8DA4EBA9A84D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C53EBFE105E593248BCC189 /* Pods_CS_4153_Quick_Ventory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2BF3C5068224D4C9435139E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F626E6C0E143914F56BC1B06 /* Pods-CS-4153-Quick-Ventory.debug.xcconfig */,
+				9842897CE48059E85CC24E59 /* Pods-CS-4153-Quick-Ventory.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7CF6EA24386DA000613119 /* Build configuration list for PBXNativeTarget "CS-4153-Quick-Ventory" */;
 			buildPhases = (
+				468D7F7BAB0786DF76954B11 /* [CP] Check Pods Manifest.lock */,
 				2C7CF6CF24386D9F00613119 /* Sources */,
 				2C7CF6D024386D9F00613119 /* Frameworks */,
 				2C7CF6D124386D9F00613119 /* Resources */,
+				EAE62DE4D3DC15BA59C70622 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,6 +210,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		468D7F7BAB0786DF76954B11 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CS-4153-Quick-Ventory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EAE62DE4D3DC15BA59C70622 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2C7CF6CF24386D9F00613119 /* Sources */ = {
@@ -350,6 +419,7 @@
 		};
 		2C7CF6EB24386DA000613119 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F626E6C0E143914F56BC1B06 /* Pods-CS-4153-Quick-Ventory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -367,6 +437,7 @@
 		};
 		2C7CF6EC24386DA000613119 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9842897CE48059E85CC24E59 /* Pods-CS-4153-Quick-Ventory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

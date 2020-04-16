@@ -1,0 +1,6 @@
+framework module Pods_CS_4153_Quick_Ventory {
+  umbrella header "Pods-CS-4153-Quick-Ventory-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Oklahoma State University. All rights reserved.
 //
 
-/*import UIKit
+import UIKit
 import Charts
 
 class BarChartController: UIViewController, ChartViewDelegate{
@@ -39,4 +39,4 @@ class BarChartController: UIViewController, ChartViewDelegate{
         barChart.data = data
     }
 
-}*/
+}
