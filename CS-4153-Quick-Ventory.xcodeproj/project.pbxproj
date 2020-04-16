@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DF188C1E8E6136FE8E276BB /* Pods_CS_4153_Quick_Ventory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48EE3BA5796F29E3512A003B /* Pods_CS_4153_Quick_Ventory.framework */; };
 		2C7783FB244426EC002F8B54 /* ModifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7783FA244426EC002F8B54 /* ModifyController.swift */; };
 		2C7CF6D724386D9F00613119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CF6D624386D9F00613119 /* AppDelegate.swift */; };
 		2C7CF6D924386D9F00613119 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CF6D824386D9F00613119 /* SceneDelegate.swift */; };
@@ -15,6 +16,8 @@
 		2C7CF6E124386D9F00613119 /* CS_4153_Quick_Ventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2C7CF6DF24386D9F00613119 /* CS_4153_Quick_Ventory.xcdatamodeld */; };
 		2C7CF6E324386DA000613119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CF6E224386DA000613119 /* Assets.xcassets */; };
 		2C7CF6E624386DA000613119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C7CF6E424386DA000613119 /* LaunchScreen.storyboard */; };
+		40465F102448923D009F75DE /* BarChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40465F0F2448923D009F75DE /* BarChartController.swift */; };
+		40465F122448925C009F75DE /* CircleChartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40465F112448925C009F75DE /* CircleChartController.swift */; };
 		40892D28243E301C0048E40C /* NewProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40892D27243E301C0048E40C /* NewProductController.swift */; };
 		40892D2A2440E4F80048E40C /* InventoryReportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40892D292440E4F80048E40C /* InventoryReportsController.swift */; };
 		40892D34244686F20048E40C /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40892D33244686F20048E40C /* ProductCell.swift */; };
@@ -41,10 +44,14 @@
 		2C7CF6E224386DA000613119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C7CF6E524386DA000613119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C7CF6E724386DA000613119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40465F0F2448923D009F75DE /* BarChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartController.swift; sourceTree = "<group>"; };
+		40465F112448925C009F75DE /* CircleChartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleChartController.swift; sourceTree = "<group>"; };
 		40892D27243E301C0048E40C /* NewProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductController.swift; sourceTree = "<group>"; };
 		40892D292440E4F80048E40C /* InventoryReportsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReportsController.swift; sourceTree = "<group>"; };
 		40892D33244686F20048E40C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		40892D35244687120048E40C /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		48EE3BA5796F29E3512A003B /* Pods_CS_4153_Quick_Ventory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_4153_Quick_Ventory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E8D974B056A30570D886106 /* Pods-CS-4153-Quick-Ventory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS-4153-Quick-Ventory.debug.xcconfig"; path = "Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory.debug.xcconfig"; sourceTree = "<group>"; };
 		84109BE8243E432C00CE4814 /* LoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
 		84109BEA243E435600CE4814 /* BroadCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCategoryCell.swift; sourceTree = "<group>"; };
 		84109BEB243E435600CE4814 /* CategoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
@@ -54,6 +61,7 @@
 		84109BF3243E436400CE4814 /* UserProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileController.swift; sourceTree = "<group>"; };
 		84393BC8244143DC00B031DA /* SignUpRestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRestViewController.swift; sourceTree = "<group>"; };
 		84393BCA2441442900B031DA /* SignUpUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUserViewController.swift; sourceTree = "<group>"; };
+		E2B08FAC2B2DCAAE1224B656 /* Pods-CS-4153-Quick-Ventory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS-4153-Quick-Ventory.release.xcconfig"; path = "Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF188C1E8E6136FE8E276BB /* Pods_CS_4153_Quick_Ventory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +82,7 @@
 				2C7CF6D524386D9F00613119 /* CS-4153-Quick-Ventory */,
 				2C7CF6D424386D9F00613119 /* Products */,
 				EEEBAE741F532BD20E161275 /* Pods */,
+				52B015EA941578E304FA254E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +105,8 @@
 				40892D35244687120048E40C /* ProductController.swift */,
 				2C7783FA244426EC002F8B54 /* ModifyController.swift */,
 				40892D292440E4F80048E40C /* InventoryReportsController.swift */,
+				40465F0F2448923D009F75DE /* BarChartController.swift */,
+				40465F112448925C009F75DE /* CircleChartController.swift */,
 				84109BF2243E436400CE4814 /* SignUpController.swift */,
 				84109BF3243E436400CE4814 /* UserProfileController.swift */,
 				84109BEA243E435600CE4814 /* BroadCategoryCell.swift */,
@@ -113,9 +125,19 @@
 			path = "CS-4153-Quick-Ventory";
 			sourceTree = "<group>";
 		};
+		52B015EA941578E304FA254E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48EE3BA5796F29E3512A003B /* Pods_CS_4153_Quick_Ventory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EEEBAE741F532BD20E161275 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				6E8D974B056A30570D886106 /* Pods-CS-4153-Quick-Ventory.debug.xcconfig */,
+				E2B08FAC2B2DCAAE1224B656 /* Pods-CS-4153-Quick-Ventory.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -127,9 +149,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C7CF6EA24386DA000613119 /* Build configuration list for PBXNativeTarget "CS-4153-Quick-Ventory" */;
 			buildPhases = (
+				3426AC6B1500F5A6952707F0 /* [CP] Check Pods Manifest.lock */,
 				2C7CF6CF24386D9F00613119 /* Sources */,
 				2C7CF6D024386D9F00613119 /* Frameworks */,
 				2C7CF6D124386D9F00613119 /* Resources */,
+				A5BDC1CA72301EF647C86997 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +210,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3426AC6B1500F5A6952707F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CS-4153-Quick-Ventory-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5BDC1CA72301EF647C86997 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CS-4153-Quick-Ventory/Pods-CS-4153-Quick-Ventory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2C7CF6CF24386D9F00613119 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -193,7 +259,9 @@
 			files = (
 				40892D28243E301C0048E40C /* NewProductController.swift in Sources */,
 				40892D36244687120048E40C /* ProductController.swift in Sources */,
+				40465F122448925C009F75DE /* CircleChartController.swift in Sources */,
 				84109BEE243E435600CE4814 /* BroadCategoryCell.swift in Sources */,
+				40465F102448923D009F75DE /* BarChartController.swift in Sources */,
 				84109BF5243E436400CE4814 /* UserProfileController.swift in Sources */,
 				2C7CF6DB24386D9F00613119 /* ViewController.swift in Sources */,
 				84393BC9244143DC00B031DA /* SignUpRestViewController.swift in Sources */,
@@ -350,6 +418,7 @@
 		};
 		2C7CF6EB24386DA000613119 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E8D974B056A30570D886106 /* Pods-CS-4153-Quick-Ventory.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -367,6 +436,7 @@
 		};
 		2C7CF6EC24386DA000613119 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2B08FAC2B2DCAAE1224B656 /* Pods-CS-4153-Quick-Ventory.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
