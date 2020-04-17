@@ -8,14 +8,22 @@
 
 import UIKit
 import Charts
+import CoreData
 
 class BarChartController: UIViewController, ChartViewDelegate{
 
     var barChart = BarChartView()
+    var appDelegate: AppDelegate?
+    var context: NSManagedObjectContext?
+    var itemEntity: NSEntityDescription?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         barChart.delegate = self
+        
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
+        itemEntity = NSEntityDescription.entity(forEntityName: "item", in:context!)
     }
     
     override func viewDidLayoutSubviews() {

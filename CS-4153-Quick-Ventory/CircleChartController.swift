@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import CoreData
 
 class CircleChartController: UIViewController, ChartViewDelegate {
 

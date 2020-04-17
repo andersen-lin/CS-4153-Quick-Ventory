@@ -1,0 +1,26 @@
+{
+  "images" : [
+    {
+      "filename" : "QVLogo_dark@4x-1.png",
+      "idiom" : "universal"
+    },
+    {
+      "filename" : "QVLogo_dark@4x.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "QVLogo_white@4x.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
