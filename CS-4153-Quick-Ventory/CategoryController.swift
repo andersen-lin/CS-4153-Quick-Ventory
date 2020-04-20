@@ -16,11 +16,11 @@ class CategoryController: UITableViewController {
     var itemEntity: NSEntityDescription?
     
     let foodbeverSource = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments"]
-    let tablewareSource = ["Utensils", "Containers and Plates", "Cups", "Napkins", "Sauce Packets"]
+    let tablewareSource = ["Utensils", "Containers and Plates", "Cups", "Napkins and Sauce Packets"]
     let cleaningSource = ["Chemicals", "Toiletries", "Cleaning Tools"]
     
     let foodbeverImage = [UIImage(named: "breads"), UIImage(named: "meats"), UIImage(named: "cheeses"), UIImage(named: "vegetables"), UIImage(named: "condiments")]
-    let tablewareImage = [UIImage(named: "utensils"), UIImage(named: "platescontainers"), UIImage(named: "cups"), UIImage(named: "napkins"), UIImage(named: "saucepackets")]
+    let tablewareImage = [UIImage(named: "utensils"), UIImage(named: "platescontainers"), UIImage(named: "cups"), UIImage(named: "saucenapkin")]
     let cleaningImage = [UIImage(named: "chemicals"), UIImage(named: "toiletries"), UIImage(named: "cleaningtools")]
     
     var passedBroadCategory: String!
@@ -102,7 +102,7 @@ class CategoryController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

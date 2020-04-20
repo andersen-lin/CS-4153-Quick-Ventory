@@ -16,7 +16,34 @@ class ProductController: UITableViewController {
     var itemEntity: NSEntityDescription?
     
     let breadsSource = ["White", "Wheat"]
+    let meatsSource = ["Beef", "Pork", "Chicken"]
+    let cheesesSource = ["American", "Cheddar", "Parmesan", "Swiss"]
+    let vegetablesSource = ["Spinach", "Lettuce", "Cucumber"]
+    let condimentsSource = ["Mustard", "Mayonaisse", "Ketchup"]
+    
+    let utensilsSource = ["Spoon", "Knife", "Fork"]
+    let conplSource = ["Plate", "Bowl", "To-Go Box"]
+    let cupsSource = ["Coffee Cup", "Soda Cup"]
+    let napsauSource = ["Napkin", "Sauce Packet"]
+    
+    let chemSource = ["Detergent", "Sanitizer", "Airspray"]
+    let toilSource = ["Soap", "Toothbrush", "Towel"]
+    let cleanSource = ["Broom", "Mop", "Bucket"]
+    
     let breadsImage = [UIImage(named: "white_bread"), UIImage(named: "wheat_bread")]
+    let meatsImage = [UIImage(named: "beef_meat"), UIImage(named: "pork_meat"), UIImage(named: "chicken_meat")]
+    let cheeseImage = UIImage(named: "cheeses")
+    let vegetablesImage = [UIImage(named: "spinach_vegetable"), UIImage(named: "lettuce_vegetable"), UIImage(named: "cucumber_vegetable")]
+    let condimentsImage = [UIImage(named: "mustard_condiment"), UIImage(named: "mayonaisse_condiment"), UIImage(named: "ketchup_condiment")]
+    
+    let utensilsImage = [UIImage(named: "spoon_utensil"), UIImage(named: "knife_utensil"), UIImage(named: "fork_utensil")]
+    let conplImage = [UIImage(named: "plate_conpl"), UIImage(named: "bowl_conpl"), UIImage(named: "takeaway_conpl")]
+    let cupsImage = [UIImage(named: "coffee_cup"), UIImage(named: "soda_cup")]
+    let napsauImage = [UIImage(named: "napkins"), UIImage(named: "saucepackets")]
+    
+    let chemImage = [UIImage(named: "detergent_chem"), UIImage(named: "sanitizer_chem"), UIImage(named: "airspray_chem")]
+    let toilImage = [UIImage(named: "soap_toil"), UIImage(named: "toothbrush_toil"), UIImage(named: "towel_toil")]
+    let cleanImage = [UIImage(named: "broom_clean"), UIImage(named: "mop_clean"), UIImage(named: "bucket_clean")]
     
     var passedCategory: String!
     var productToPass: String!
@@ -55,6 +82,29 @@ class ProductController: UITableViewController {
         switch passedCategory {
         case "Breads":
             return breadsSource.count
+        case "Meats":
+            return meatsSource.count
+        case "Cheeses":
+            return cheesesSource.count
+        case "Vegetables":
+            return vegetablesSource.count
+        case "Condiments":
+            return condimentsSource.count
+        case "Utensils":
+            return utensilsSource.count
+        case "Containers and Plates":
+            return conplSource.count
+        case "Cups":
+            return cupsSource.count
+        case "Napkins and Sauce Packets":
+            return napsauSource.count
+        case "Chemicals":
+            return chemSource.count
+        case "Toiletries":
+            return toilSource.count
+        case "Cleaning Tools":
+            return cleanSource.count
+            
         default:
             return breadsSource.count
         }
@@ -68,9 +118,41 @@ class ProductController: UITableViewController {
         case "Breads":
             cell.ProductLabel?.text =  breadsSource[indexPath[1]]
             cell.ProductImage?.image = breadsImage[indexPath[1]]
+        case "Meats":
+            cell.ProductLabel?.text =  meatsSource[indexPath[1]]
+            cell.ProductImage?.image = meatsImage[indexPath[1]]
+        case "Cheeses":
+            cell.ProductLabel?.text =  cheesesSource[indexPath[1]]
+            cell.ProductImage?.image = cheeseImage
+        case "Vegetables":
+            cell.ProductLabel?.text =  vegetablesSource[indexPath[1]]
+            cell.ProductImage?.image = vegetablesImage[indexPath[1]]
+        case "Condiments":
+            cell.ProductLabel?.text =  condimentsSource[indexPath[1]]
+            cell.ProductImage?.image = condimentsImage[indexPath[1]]
+        case "Utensils":
+            cell.ProductLabel?.text =  utensilsSource[indexPath[1]]
+            cell.ProductImage?.image = utensilsImage[indexPath[1]]
+        case "Containers and Plates":
+            cell.ProductLabel?.text =  conplSource[indexPath[1]]
+            cell.ProductImage?.image = conplImage[indexPath[1]]
+        case "Cups":
+            cell.ProductLabel?.text =  cupsSource[indexPath[1]]
+            cell.ProductImage?.image = cupsImage[indexPath[1]]
+        case "Napkins and Sauce Packets":
+            cell.ProductLabel?.text =  napsauSource[indexPath[1]]
+            cell.ProductImage?.image = napsauImage[indexPath[1]]
+        case "Chemicals":
+            cell.ProductLabel?.text =  chemSource[indexPath[1]]
+            cell.ProductImage?.image = chemImage[indexPath[1]]
+        case "Toiletries":
+            cell.ProductLabel?.text =  toilSource[indexPath[1]]
+            cell.ProductImage?.image = toilImage[indexPath[1]]
+        case "Cleaning Tools":
+            cell.ProductLabel?.text =  cleanSource[indexPath[1]]
+            cell.ProductImage?.image = cleanImage[indexPath[1]]
         default:
-            cell.ProductLabel?.text =  "XXX"
-            cell.ProductImage?.image = breadsImage[indexPath[1]]
+            cell.ProductLabel?.text =  "N/A"
         }
         return cell
     }
@@ -91,7 +173,7 @@ class ProductController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
