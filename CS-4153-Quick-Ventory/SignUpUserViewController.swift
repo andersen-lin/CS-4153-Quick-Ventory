@@ -101,12 +101,7 @@ class SignUpUserViewController: UIViewController, UITextFieldDelegate {
             let result = try context.fetch(fetchReq)
             for data in result as! [Restaurant] {
                 print(data)
-                
-                data.restToUser = userEntity
-                
-//                let rUsers = data.mutableSetValue(forKey: #keyPath(Restaurant.restToUser))
-//                rUsers.add(userEntity)
-            
+                userEntity.userToRest = data
             }
         } catch {
             print("Failed")
@@ -125,8 +120,7 @@ class SignUpUserViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func btnNext(_ sender: UIButton) {
-        saveUser()
-        
+        saveUser()        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

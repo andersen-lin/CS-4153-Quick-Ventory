@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginScreenController: UIViewController,UITextFieldDelegate {
 
@@ -33,6 +34,61 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
         return true
     }
     
+    @IBAction func onClickLogin(_ sender: UIButton) {
+        
+        if eRest.text == "" {
+            let alert =  UIAlertController(title: "Login Error", message: "You must provide a restaurant name", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        } else if eUN.text == "" || ePW.text == "" {
+            let alert =  UIAlertController(title: "Login Error", message: "You must provide a username and password", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+            let context = appDelegate.persistentContainer.viewContext
+            
+            //fetch request  for CREDS
+            let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+            let restPred = NSPredicate(format: "userToRest.name == %@", eRest.text!)
+            let credPredUN = NSPredicate(format: "userCredR.userName == %@", eUN.text!)
+            let credPredPW = NSPredicate(format: "userCredR.password == %@", ePW.text!)
+            let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [restPred, credPredUN,credPredPW])
+            fetchReq.predicate = andPredicate
+            
+            do {
+                
+                
+                let result = try context.fetch(fetchReq)
+                for data in result as! [User] {
+                    print(data)
+                    print(data.userCredR!.userName)
+                    print(data.userCredR!.password)
+                    print(data.userToRest?.name)
+                }
+                
+               
+                          
+                if result.count > 0 {
+                    performSegue(withIdentifier: "login", sender: sender)
+                    
+                } else {
+                              let alert =  UIAlertController(title: "Login Error", message: "Invalid Credentials", preferredStyle: .alert)
+                              alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                              self.present(alert, animated: true)
+                             }
+                         
+            } catch {
+                print("fail")
+            }
+            
+            
+          
+            
+            
+          
+        }
+    }
     
     /*
     // MARK: - Navigation
@@ -44,4 +100,10 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
     }
     */
 
+    
+    
+    
+    
+    
+    
 }
