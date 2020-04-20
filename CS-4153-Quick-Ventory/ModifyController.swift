@@ -11,6 +11,15 @@ import UIKit
 class ModifyController: UIViewController {
 
     var passedProduct: [String]!
+    var deltaQuantity: Int = 0 {
+        willSet {
+            if (newValue >= 0) {
+                quantity.text = "+" + String(newValue)
+            } else {
+                quantity.text = String(newValue)
+            }
+        }
+    }
     
     @IBOutlet weak var productInfo: UILabel!
     @IBOutlet weak var categoryInfo: UILabel!
@@ -23,7 +32,14 @@ class ModifyController: UIViewController {
         productInfo.text = passedProduct[0]
         categoryInfo.text = passedProduct[1]
     }
+ 
+    @IBAction func addProduct(_ sender: Any) {
+        deltaQuantity += 1
+    }
     
+    @IBAction func deductProduct(_ sender: Any) {
+        deltaQuantity -= 1
+    }
 
     /*
     // MARK: - Navigation
