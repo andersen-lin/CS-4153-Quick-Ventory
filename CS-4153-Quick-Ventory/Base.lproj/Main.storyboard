@@ -757,6 +757,9 @@
                                 <rect key="frame" x="133" y="377.66666666666669" width="148" height="32"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <state key="normal" title="Change Password"/>
+                                <connections>
+                                    <action selector="onClickChangePW:" destination="DWk-aT-UVL" eventType="touchUpInside" id="SGk-ja-E0g"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1229,7 +1232,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-iF-93J">
-                                                        <rect key="frame" x="210.66666666666663" y="0.0" width="89.333333333333343" height="73"/>
+                                                        <rect key="frame" x="210.66666666666666" y="0.0" width="89.333333333333343" height="73"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihr-Mf-5Zb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="23"/>
@@ -1276,7 +1279,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BHA-8i-IoM">
-                                                        <rect key="frame" x="234.33333333333337" y="0.0" width="65.666666666666657" height="73"/>
+                                                        <rect key="frame" x="234.33333333333334" y="0.0" width="65.666666666666657" height="73"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Zip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpq-e8-XhZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="23"/>
@@ -1535,7 +1538,6 @@
         <image name="plus.rectangle" catalog="system" width="64" height="46"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ner-FL-7wf"/>
         <segue reference="Cvy-Ge-NsH"/>
         <segue reference="788-ue-Qbb"/>
     </inferredMetricsTieBreakers>
