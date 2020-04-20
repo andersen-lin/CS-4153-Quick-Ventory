@@ -78,18 +78,43 @@ class SignUpUserViewController: UIViewController, UITextFieldDelegate {
         guard let uUN = eUsername.text else { return }
         guard let uPW = ePw.text else { return }
         guard let uPW2 = ePwConfirm.text else { return }
+        guard let uRestName = cbRest.titleLabel?.text else { return }
         if uPW != uPW2 { return }
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
-        let userEntity = NSEntityDescription.entity(forEntityName: "User", in:context)!
-        let loginEntity = NSEntityDescription.entity(forEntityName: "UserCredentials", in:context)!
         
-        let user = NSManagedObject(entity: userEntity, insertInto: context)
+        let userEntity = User(context: context)
         
-//        user.setValue(eName.text, forKey: "name")
-//        user.setValue(eAdd1.text, forKey: "addressLine1")
+        userEntity.firstName = uFN
+        userEntity.lastName = uLN
+        userEntity.isDarkMode = false
+        userEntity.userCredR = UserCredentials(context: context)
+        userEntity.userCredR?.userName = uUN
+        userEntity.userCredR?.password = uPW
+      
+        //fetch request  for RESTAURANT ADDITION
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Restaurant")
+        fetchReq.predicate = NSPredicate(format: "name == %@", uRestName)
         
+        do {
+            let result = try context.fetch(fetchReq)
+            for data in result as! [Restaurant] {
+                print(data)
+                
+                data.restToUser = userEntity
+                
+//                let rUsers = data.mutableSetValue(forKey: #keyPath(Restaurant.restToUser))
+//                rUsers.add(userEntity)
+            
+            }
+        } catch {
+            print("Failed")
+        }
+    
+    
+        
+        // SAVE
         do {
            try context.save()
         } catch let error as NSError {
@@ -100,7 +125,7 @@ class SignUpUserViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func btnNext(_ sender: UIButton) {
-        
+        saveUser()
         
     }
     

@@ -56,12 +56,10 @@ class SignUpRestViewController: UIViewController, UITextFieldDelegate {
         guard let restName = eName.text else { return }
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
         let context = appDelegate.persistentContainer.viewContext
-        let restEntity = NSEntityDescription.entity(forEntityName: "Restaurant", in:context)!
+        let rest = Restaurant(context: context)
         
-        let rest = NSManagedObject(entity: restEntity, insertInto: context)
-        
-        rest.setValue(eName.text, forKey: "name")
-        rest.setValue(eAdd1.text, forKey: "addressLine1")
+        rest.name = eName.text
+        rest.addressLine1 = eAdd1.text
         rest.setValue(eAdd2.text, forKey: "addressLine2")
         rest.setValue(eCity.text, forKey: "city")
         rest.setValue(eState.text, forKey: "state")
