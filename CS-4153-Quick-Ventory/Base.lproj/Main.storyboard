@@ -331,14 +331,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wBY-Fe-c1z">
-                                                    <rect key="frame" x="15" y="0.0" width="90" height="90"/>
+                                                    <rect key="frame" x="15" y="2.6666666666666643" width="85" height="85"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="Kzl-rK-cuA"/>
-                                                        <constraint firstAttribute="height" constant="90" id="yRD-8p-d5e"/>
+                                                        <constraint firstAttribute="width" constant="85" id="Kzl-rK-cuA"/>
+                                                        <constraint firstAttribute="height" constant="85" id="yRD-8p-d5e"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xaw-Xw-u2q">
-                                                    <rect key="frame" x="117" y="32.666666666666664" width="285" height="25"/>
+                                                    <rect key="frame" x="112" y="32.666666666666664" width="290" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="tPq-xU-1dj"/>
                                                     </constraints>
@@ -513,14 +513,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPf-1V-kZY">
-                                                    <rect key="frame" x="20" y="0.0" width="90" height="90"/>
+                                                    <rect key="frame" x="20" y="2.6666666666666643" width="85" height="85"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="SeA-yx-H0y"/>
-                                                        <constraint firstAttribute="height" constant="90" id="jRp-we-UQN"/>
+                                                        <constraint firstAttribute="width" constant="85" id="SeA-yx-H0y"/>
+                                                        <constraint firstAttribute="height" constant="85" id="jRp-we-UQN"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LxH-Bd-X5L">
-                                                    <rect key="frame" x="120" y="30.666666666666671" width="274" height="29"/>
+                                                    <rect key="frame" x="115" y="30.666666666666671" width="279" height="29"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -589,19 +589,19 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfa-6X-Jsi">
-                                                    <rect key="frame" x="20" y="0.0" width="90" height="90"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="90" id="7h9-eP-vdc"/>
-                                                        <constraint firstAttribute="height" constant="90" id="Anc-Hf-o7A"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="sNG-gd-vU0">
-                                                    <rect key="frame" x="120" y="30.666666666666671" width="274" height="29"/>
+                                                    <rect key="frame" x="115" y="30.666666666666671" width="279" height="29"/>
                                                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfa-6X-Jsi">
+                                                    <rect key="frame" x="20" y="2.6666666666666665" width="85" height="85"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="85" id="7h9-eP-vdc"/>
+                                                        <constraint firstAttribute="height" constant="85" id="Anc-Hf-o7A"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sNG-gd-vU0" firstAttribute="leading" secondItem="Nfa-6X-Jsi" secondAttribute="trailing" constant="10" id="2LT-9u-WMB"/>
