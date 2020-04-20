@@ -111,6 +111,9 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
                 if result.count > 0 {
                     performSegue(withIdentifier: "login", sender: sender)
                     
+                    //Save user login data
+                    UserDefaults.standard.set((btnRest.titleLabel?.text! ?? "") + ";" +  (eUN.text ?? ""), forKey: "login")
+                    
                 } else {
                               let alert =  UIAlertController(title: "Login Error", message: "Invalid Credentials", preferredStyle: .alert)
                               alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))

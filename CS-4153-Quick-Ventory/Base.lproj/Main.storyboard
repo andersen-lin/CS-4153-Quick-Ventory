@@ -35,14 +35,14 @@
                                 <rect key="frame" x="5" y="5" width="404" height="798"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QVLogo_dark@4x" translatesAutoresizingMaskIntoConstraints="NO" id="451-uv-UuM">
-                                        <rect key="frame" x="107" y="0.0" width="190" height="278"/>
+                                        <rect key="frame" x="107" y="0.0" width="190" height="300"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="7Jl-0O-yMy"/>
                                             <constraint firstAttribute="width" constant="190" id="tl3-hz-rzI"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="nO9-mQ-QhI">
-                                        <rect key="frame" x="122.66666666666667" y="328" width="158.66666666666663" height="270"/>
+                                        <rect key="frame" x="122.66666666666667" y="362.33333333333331" width="158.66666666666663" height="223.33333333333331"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNU-ak-bJN">
                                                 <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="75"/>
@@ -57,14 +57,8 @@
                                                     <action selector="cbRest:" destination="8zm-kN-ZvV" eventType="touchUpInside" id="DTc-9d-9IG"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiM-kD-vUW">
-                                                <rect key="frame" x="0.0" y="93" width="158.66666666666666" height="0.0"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3q-3L-I7i">
-                                                <rect key="frame" x="0.0" y="111" width="158.66666666666666" height="50"/>
+                                                <rect key="frame" x="0.0" y="93" width="158.66666666666666" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -73,14 +67,8 @@
                                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zcd-Io-1Gf">
-                                                <rect key="frame" x="0.0" y="179" width="158.66666666666666" height="23"/>
-                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
-                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dmr-Qe-LPp">
-                                                <rect key="frame" x="0.0" y="220" width="158.66666666666666" height="50"/>
+                                                <rect key="frame" x="0.0" y="173.33333333333331" width="158.66666666666666" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -729,7 +717,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2020-04-04 at 12.11.37 PM-1" translatesAutoresizingMaskIntoConstraints="NO" id="o7A-UQ-75l">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User_Profile" translatesAutoresizingMaskIntoConstraints="NO" id="o7A-UQ-75l">
                                 <rect key="frame" x="87" y="20" width="240" height="204"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="TP6-FF-MKQ"/>
@@ -785,6 +773,12 @@
                         <viewLayoutGuide key="safeArea" id="Vuh-5P-PQO"/>
                     </view>
                     <navigationItem key="navigationItem" id="QhO-uh-fRe"/>
+                    <connections>
+                        <outlet property="lNam" destination="MQI-GN-N4e" id="pKR-3b-XGe"/>
+                        <outlet property="lPW" destination="Hyp-r8-WDE" id="joL-qU-sLQ"/>
+                        <outlet property="lRest" destination="fao-kX-KAQ" id="aQh-e3-QcJ"/>
+                        <outlet property="lUN" destination="M33-mh-KiN" id="cjG-H8-6KV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jap-Xm-R3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1235,7 +1229,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bAC-iF-93J">
-                                                        <rect key="frame" x="210.66666666666666" y="0.0" width="89.333333333333343" height="73"/>
+                                                        <rect key="frame" x="210.66666666666663" y="0.0" width="89.333333333333343" height="73"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihr-Mf-5Zb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="89.333333333333329" height="23"/>
@@ -1282,7 +1276,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BHA-8i-IoM">
-                                                        <rect key="frame" x="234.33333333333334" y="0.0" width="65.666666666666657" height="73"/>
+                                                        <rect key="frame" x="234.33333333333337" y="0.0" width="65.666666666666657" height="73"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Zip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpq-e8-XhZ">
                                                                 <rect key="frame" x="0.0" y="0.0" width="65.666666666666671" height="23"/>
@@ -1536,7 +1530,7 @@
     </scenes>
     <resources>
         <image name="QVLogo_dark@4x" width="300" height="300"/>
-        <image name="Screen Shot 2020-04-04 at 12.11.37 PM-1" width="76" height="71"/>
+        <image name="User_Profile" width="300" height="300"/>
         <image name="minus.rectangle" catalog="system" width="64" height="46"/>
         <image name="plus.rectangle" catalog="system" width="64" height="46"/>
     </resources>
