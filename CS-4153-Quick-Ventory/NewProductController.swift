@@ -177,10 +177,10 @@ class NewProductController: UIViewController, UITextFieldDelegate {
     }
     
     enum tableWares: String {
-        case utensils = "Breads"
-        case containersAndPlates = "Meats"
-        case cups = "Cheeses"
-        case napkinsAndSaucePacks = "Vegetables"
+        case utensils = "Utensils"
+        case containersAndPlates = "Containers and Plates"
+        case cups = "Cups"
+        case napkinsAndSaucePacks = "Napkins and Sauce Packs"
     }
     @IBAction func tableWareTapped(_ sender: UIButton) {
         

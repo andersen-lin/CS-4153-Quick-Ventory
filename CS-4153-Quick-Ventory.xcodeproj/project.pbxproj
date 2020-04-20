@@ -139,7 +139,6 @@
 				F626E6C0E143914F56BC1B06 /* Pods-CS-4153-Quick-Ventory.debug.xcconfig */,
 				9842897CE48059E85CC24E59 /* Pods-CS-4153-Quick-Ventory.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

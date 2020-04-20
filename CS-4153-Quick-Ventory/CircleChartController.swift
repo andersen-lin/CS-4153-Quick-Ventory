@@ -14,9 +14,89 @@ class CircleChartController: UIViewController, ChartViewDelegate {
 
    var pieChart = PieChartView()
     
+    var breadDataEntry = PieChartDataEntry(value: 0)
+    var meatDataEntry = PieChartDataEntry(value: 0)
+    var cheeseDataEntry = PieChartDataEntry(value: 0)
+    var vegetableDataEntry = PieChartDataEntry(value: 0)
+    var condimentDataEntry = PieChartDataEntry(value: 0)
+    var utensilDataEntry = PieChartDataEntry(value: 0)
+    var capDataEntry = PieChartDataEntry(value: 0)
+    var cupDataEntry = PieChartDataEntry(value: 0)
+    var napkinaspDataEntry = PieChartDataEntry(value: 0)
+    var chemicalDataEntry = PieChartDataEntry(value: 0)
+    var toiletriesDataEntry = PieChartDataEntry(value: 0)
+    var cleaningtoolDataEntry = PieChartDataEntry(value: 0)
+    
+    var numberOfSubCats = [PieChartDataEntry]()
+    var numberOfSubCatsLabels: [String] = []
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pieChart.delegate = self
+        
+        pieChart.chartDescription?.text = "Sub-Categories"
+        
+        numberOfSubCats = [breadDataEntry, meatDataEntry, cheeseDataEntry, vegetableDataEntry, condimentDataEntry, utensilDataEntry, capDataEntry, cupDataEntry, napkinaspDataEntry, chemicalDataEntry, toiletriesDataEntry, cleaningtoolDataEntry]
+        numberOfSubCatsLabels = ["Breads", "Meats"]
+        
+        retrieveData()
+    }
+    
+    func retrieveData() {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+                
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                let subCategory = (data.value(forKey: "sub_category") as! String)
+                
+                switch subCategory {
+                    case "breads":
+                        breadDataEntry.value = breadDataEntry.value + 1
+                        break
+                    case "meats":
+                        meatDataEntry.value = meatDataEntry.value + 1
+                        break
+                    case "cheeses":
+                        cheeseDataEntry.value = cheeseDataEntry.value + 1
+                        break
+                    case "vegetables":
+                        vegetableDataEntry.value = vegetableDataEntry.value + 1
+                        break
+                    case "condiments":
+                        condimentDataEntry.value = condimentDataEntry.value + 1
+                        break
+                    case "utensils":
+                        utensilDataEntry.value = utensilDataEntry.value + 1
+                        break
+                    case "containers and plates":
+                        capDataEntry.value = capDataEntry.value + 1
+                        break
+                    case "cups":
+                        cupDataEntry.value = cupDataEntry.value + 1
+                        break
+                    case "napkins and sauce packs":
+                        napkinaspDataEntry.value = napkinaspDataEntry.value + 1
+                        break
+                    case "chemicals":
+                        chemicalDataEntry.value = chemicalDataEntry.value + 1
+                        break
+                    case "toiletries":
+                        toiletriesDataEntry.value = toiletriesDataEntry.value + 1
+                        break
+                    default:
+                        cleaningtoolDataEntry.value = cleaningtoolDataEntry.value + 1
+                        break
+                }
+            }
+        } catch {
+            print("Failed")
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -27,17 +107,12 @@ class CircleChartController: UIViewController, ChartViewDelegate {
         pieChart.center = view.center
         view.addSubview(pieChart)
         
-        var entries = [PieChartDataEntry]()
+       let chartDataSet = PieChartDataSet(entries: numberOfSubCats, label: "sub-Categories")
+        let chartData = PieChartData(dataSet: chartDataSet)
         
-        for x in 0..<10 {
-            entries.append(PieChartDataEntry(value: Double(x), data: Double(x)))
-        }
+        chartDataSet.colors = ChartColorTemplates.joyful()
         
-        let set = PieChartDataSet(entries: entries)
-        set.colors = ChartColorTemplates.joyful()
-        
-        let data = PieChartData(dataSet: set)
-        pieChart.data = data
+        pieChart.data = chartData
     }
     
 
