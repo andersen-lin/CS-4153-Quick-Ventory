@@ -9,11 +9,24 @@
 import UIKit
 import CoreData
 
+
+class CellClassv2: UITableViewCell {
+    
+}
+
+
 class LoginScreenController: UIViewController,UITextFieldDelegate {
 
-    @IBOutlet weak var eRest: UITextField!
+    
+    @IBOutlet weak var btnRest: UIButton!
     @IBOutlet weak var eUN: UITextField!
     @IBOutlet weak var ePW: UITextField!
+    
+    //Dropdown
+    let transparentView = UIView()
+    let tableView = UITableView()
+    var selectedButton = UIButton()
+    var dataSource = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +36,36 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
         
-        eRest.delegate = self
+        
         eUN.delegate = self
         ePW.delegate = self
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(CellClassv2.self, forCellReuseIdentifier: "Cell")
+       
+        loadRests()
+        
     }
+    
+    
+    func loadRests(){
+           // Do any additional setup after loading the view.
+           
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Restaurant")
+           
+        do {
+            let result = try context.fetch(fetchReq)
+            for data in result as! [NSManagedObject] {
+                dataSource.append( data.value(forKey: "name") as! String )
+            }
+        } catch {
+            print("Failed")
+        }
+    }
+      
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Resign keyboard after return. 
@@ -36,7 +75,7 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
     
     @IBAction func onClickLogin(_ sender: UIButton) {
         
-        if eRest.text == "" {
+        if btnRest.titleLabel?.text == "" {
             let alert =  UIAlertController(title: "Login Error", message: "You must provide a restaurant name", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
             self.present(alert, animated: true)
@@ -50,7 +89,7 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
             
             //fetch request  for CREDS
             let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-            let restPred = NSPredicate(format: "userToRest.name == %@", eRest.text!)
+            let restPred = NSPredicate(format: "userToRest.name == %@", btnRest.titleLabel?.text! ?? "")
             let credPredUN = NSPredicate(format: "userCredR.userName == %@", eUN.text!)
             let credPredPW = NSPredicate(format: "userCredR.password == %@", ePW.text!)
             let andPredicate = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: [restPred, credPredUN,credPredPW])
@@ -101,9 +140,66 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
     */
 
     
+    @IBAction func btnOnClickRest(_ sender: UIButton) {
+        selectedButton = btnRest
+        addTransparentView(frames: btnRest.frame)
+    }
+    
+    func addTransparentView(frames: CGRect) {
+        let window = UIApplication.shared.keyWindow
+        transparentView.frame = window?.frame ?? self.view.frame
+        self.view.addSubview(transparentView)
+        
+        tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+        self.view.addSubview(tableView)
+        tableView.layer.cornerRadius = 5
+        
+        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        tableView.reloadData()
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
+        transparentView.addGestureRecognizer(tapgesture)
+        transparentView.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            self.transparentView.alpha = 0.5
+            self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height + 5, width: frames.width, height: CGFloat(self.dataSource.count * 50))
+        }, completion: nil)
+    }
+    
+    
+    @objc func removeTransparentView() {
+        let frames = selectedButton.frame
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
+            self.transparentView.alpha = 0
+            self.tableView.frame = CGRect(x: frames.origin.x, y: frames.origin.y + frames.height, width: frames.width, height: 0)
+        }, completion: nil)
+    }
     
     
     
+}
+
+
+
+
+
+
+extension LoginScreenController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = dataSource[indexPath.row]
+        return cell
+    }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedButton.setTitle(dataSource[indexPath.row], for: .normal)
+        removeTransparentView()
+    }
 }
