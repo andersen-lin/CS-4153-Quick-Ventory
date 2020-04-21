@@ -12,35 +12,38 @@ import CoreData
 
 class CircleChartController: UIViewController, ChartViewDelegate {
 
-   var pieChart = PieChartView()
+   var pieChart = PieChartView()//intializing view
     
-    var breadDataEntry = PieChartDataEntry(value: 0)
-    var meatDataEntry = PieChartDataEntry(value: 0)
-    var cheeseDataEntry = PieChartDataEntry(value: 0)
-    var vegetableDataEntry = PieChartDataEntry(value: 0)
-    var condimentDataEntry = PieChartDataEntry(value: 0)
-    var utensilDataEntry = PieChartDataEntry(value: 0)
-    var capDataEntry = PieChartDataEntry(value: 0)
-    var cupDataEntry = PieChartDataEntry(value: 0)
-    var napkinaspDataEntry = PieChartDataEntry(value: 0)
-    var chemicalDataEntry = PieChartDataEntry(value: 0)
-    var toiletriesDataEntry = PieChartDataEntry(value: 0)
-    var cleaningtoolDataEntry = PieChartDataEntry(value: 0)
+    var breadDataEntry = 0.0//Data entries being initialized
+    var meatDataEntry = 0.0
+    var cheeseDataEntry = 0.0
+    var vegetableDataEntry = 0.0
+    var condimentDataEntry = 0.0
+    var utensilDataEntry = 0.0
+    var capDataEntry = 0.0
+    var cupDataEntry = 0.0
+    var napkinaspDataEntry = 0.0
+    var chemicalDataEntry = 0.0
+    var toiletriesDataEntry = 0.0
+    var cleaningtoolDataEntry = 0.0
     
-    var numberOfSubCats = [PieChartDataEntry]()
-    var numberOfSubCatsLabels: [String] = []
+    var numberOfSubCats: [Double] = []//array of different data entries
+    var numberOfSubCatsLabels: [String] = []//array of labels for data entries
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        retrieveData()//updating data values
+        
+        
         pieChart.delegate = self
         
         pieChart.chartDescription?.text = "Sub-Categories"
-        
+        //populating arrays
         numberOfSubCats = [breadDataEntry, meatDataEntry, cheeseDataEntry, vegetableDataEntry, condimentDataEntry, utensilDataEntry, capDataEntry, cupDataEntry, napkinaspDataEntry, chemicalDataEntry, toiletriesDataEntry, cleaningtoolDataEntry]
-        numberOfSubCatsLabels = ["Breads", "Meats"]
+        numberOfSubCatsLabels = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments", "Utensils", "Containers and Plates", "Cups", "Napkins and Sauce Packs", "Chemicals", "Toiletries", "Cleaning Tools"]
         
-        retrieveData()
+        setChart(dataPoints: numberOfSubCatsLabels,values: numberOfSubCats)//building the chart
     }
     
     func retrieveData() {
@@ -48,50 +51,50 @@ class CircleChartController: UIViewController, ChartViewDelegate {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")//fetching items
                 
         do {
             let result = try managedContext.fetch(fetchRequest)
             for data in result as! [NSManagedObject] {
-                let subCategory = (data.value(forKey: "sub_category") as! String)
+                let subCategory = (data.value(forKey: "sub_category") as! String)//fetching sub category labels
                 
-                switch subCategory {
+                switch subCategory {//for each instance of a subcategory add one to the data value
                     case "breads":
-                        breadDataEntry.value = breadDataEntry.value + 1
-                        break
+                       breadDataEntry = breadDataEntry + 1
+                       break
                     case "meats":
-                        meatDataEntry.value = meatDataEntry.value + 1
-                        break
+                       meatDataEntry = meatDataEntry + 1
+                       break
                     case "cheeses":
-                        cheeseDataEntry.value = cheeseDataEntry.value + 1
-                        break
+                       cheeseDataEntry = cheeseDataEntry + 1
+                       break
                     case "vegetables":
-                        vegetableDataEntry.value = vegetableDataEntry.value + 1
-                        break
+                       vegetableDataEntry = vegetableDataEntry + 1
+                       break
                     case "condiments":
-                        condimentDataEntry.value = condimentDataEntry.value + 1
-                        break
+                       condimentDataEntry = condimentDataEntry + 1
+                       break
                     case "utensils":
-                        utensilDataEntry.value = utensilDataEntry.value + 1
-                        break
+                       utensilDataEntry = utensilDataEntry + 1
+                       break
                     case "containers and plates":
-                        capDataEntry.value = capDataEntry.value + 1
-                        break
+                       capDataEntry = capDataEntry + 1
+                       break
                     case "cups":
-                        cupDataEntry.value = cupDataEntry.value + 1
-                        break
+                       cupDataEntry = cupDataEntry + 1
+                       break
                     case "napkins and sauce packs":
-                        napkinaspDataEntry.value = napkinaspDataEntry.value + 1
-                        break
+                       napkinaspDataEntry = napkinaspDataEntry + 1
+                       break
                     case "chemicals":
-                        chemicalDataEntry.value = chemicalDataEntry.value + 1
-                        break
+                       chemicalDataEntry = chemicalDataEntry + 1
+                       break
                     case "toiletries":
-                        toiletriesDataEntry.value = toiletriesDataEntry.value + 1
-                        break
+                       toiletriesDataEntry = toiletriesDataEntry + 1
+                       break
                     default:
-                        cleaningtoolDataEntry.value = cleaningtoolDataEntry.value + 1
-                        break
+                       cleaningtoolDataEntry = cleaningtoolDataEntry + 1
+                       break
                 }
             }
         } catch {
@@ -99,19 +102,27 @@ class CircleChartController: UIViewController, ChartViewDelegate {
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    func setChart(dataPoints: [String], values: [Double]) {
         
-        pieChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)
-        
+        pieChart.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width)//build chart in view
         pieChart.center = view.center
         view.addSubview(pieChart)
         
-       let chartDataSet = PieChartDataSet(entries: numberOfSubCats, label: "sub-Categories")
+        var dataEntries: [PieChartDataEntry] = []
+        //set data entries to a barchartdataset
+        for i in 0..<dataPoints.count {//adding each data that is above zero to the chart display
+            
+            if values[i] > 0 {
+                let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i])
+                dataEntries.append(dataEntry)
+            }
+        }
+        let chartDataSet = PieChartDataSet(entries: dataEntries, label: "Sub-Categories")
+        chartDataSet.colors = ChartColorTemplates.colorful()
+
         let chartData = PieChartData(dataSet: chartDataSet)
-        
-        chartDataSet.colors = ChartColorTemplates.joyful()
-        
+        pieChart.drawEntryLabelsEnabled = false
+
         pieChart.data = chartData
     }
     
