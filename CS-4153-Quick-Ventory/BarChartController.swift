@@ -126,6 +126,6 @@ class BarChartController: UIViewController, ChartViewDelegate{
         
         let chartData = BarChartData(dataSets: dataEntries)
         barChart.data = chartData
-    }
+    }//added
 
 }

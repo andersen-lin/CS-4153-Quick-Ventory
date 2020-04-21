@@ -124,7 +124,7 @@ class CircleChartController: UIViewController, ChartViewDelegate {
         pieChart.drawEntryLabelsEnabled = false
 
         pieChart.data = chartData
-    }
+    } //added
     
 
 

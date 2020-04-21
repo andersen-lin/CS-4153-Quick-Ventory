@@ -130,7 +130,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         let chartData = PieChartData(dataSet: chartDataSet)
                 
         chartView.data = chartData
-    }
+    }//added
     
     
     
