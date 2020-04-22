@@ -40,8 +40,9 @@ class ViewController: UIViewController, ChartViewDelegate {
     var numberOfSubCatsLabels: [String] = []//array of labels for data entries
 
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        resetCount()
         retrieveData()//updating data values
         
         
@@ -53,6 +54,7 @@ class ViewController: UIViewController, ChartViewDelegate {
         numberOfSubCatsLabels = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments", "Utensils", "Containers and Plates", "Cups", "Napkins and Sauce Packs", "Chemicals", "Toiletries", "Cleaning Tools"]
         
         setChart(dataPoints: numberOfSubCatsLabels,values: numberOfSubCats)//building the chart
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     func retrieveData() {
@@ -110,7 +112,7 @@ class ViewController: UIViewController, ChartViewDelegate {
             print("Failed")
         }
     }
-    
+
     func setChart(dataPoints: [String], values: [Double]) {
         
         chartView.frame = CGRect(x: 0, y: 0, width: 300, height: 300)//build chart in view
@@ -132,7 +134,30 @@ class ViewController: UIViewController, ChartViewDelegate {
         chartView.data = chartData
     }//added
     
+    func resetCount(){
+        breadDataEntry = 0.0//Data entries being initialized
+        meatDataEntry = 0.0
+        cheeseDataEntry = 0.0
+        vegetableDataEntry = 0.0
+        condimentDataEntry = 0.0
+        utensilDataEntry = 0.0
+        capDataEntry = 0.0
+        cupDataEntry = 0.0
+        napkinaspDataEntry = 0.0
+        chemicalDataEntry = 0.0
+        toiletriesDataEntry = 0.0
+        cleaningtoolDataEntry = 0.0
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    
+    @IBAction func signOutButton(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
     
     
 }

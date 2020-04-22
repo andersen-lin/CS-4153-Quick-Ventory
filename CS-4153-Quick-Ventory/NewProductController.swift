@@ -11,28 +11,42 @@ import CoreData
 
 class NewProductController: UIViewController, UITextFieldDelegate {
     @IBOutlet var broadCategories: [UIButton]! //declaring buttons
-   
+    @IBOutlet weak var broadCatButton: UIButton!
+    
     @IBOutlet var foodAndBevCategories: [UIButton]!
     @IBOutlet weak var foodAndBevButton: UIButton!
+    @IBOutlet weak var foodAndBevCatButton: UIButton!
+    @IBOutlet weak var breadButton: UIButton!
+    @IBOutlet weak var meatButton: UIButton!
+    @IBOutlet weak var cheeseButton: UIButton!
+    @IBOutlet weak var veggieButton: UIButton!
+    @IBOutlet weak var condButton: UIButton!
     
     @IBOutlet var tableWareCategories: [UIButton]!
+    @IBOutlet weak var tableWareCatButton: UIButton!
     @IBOutlet weak var tableWareButton: UIButton!
+    @IBOutlet weak var utensilsButton: UIButton!
+    @IBOutlet weak var cAndPButton: UIButton!
+    @IBOutlet weak var cupButton: UIButton!
+    @IBOutlet weak var nappiesAndSauciesButton: UIButton!
     
     @IBOutlet var cleaningSuppliesCategories: [UIButton]!
+    @IBOutlet weak var cleaningSupplyCatButton: UIButton!
     @IBOutlet weak var cleaningSuppliesButton: UIButton!
-    
+    @IBOutlet weak var chemicalButton: UIButton!
+    @IBOutlet weak var toiletButton: UIButton!
+    @IBOutlet weak var cleaningToolButton: UIButton!
     
     @IBOutlet weak var productName: UITextField! //text entry field
     
     public var categorySelection :String = "" //holders for user selection
     public var subCategorySelection : String = ""
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        foodAndBevButton.isHidden = true //hiding buttons on open
-        tableWareButton.isHidden = true
-        cleaningSuppliesButton.isHidden = true
+        foodAndBevCatButton.isHidden = true //hiding buttons on open
+        tableWareCatButton.isHidden = true
+        cleaningSupplyCatButton.isHidden = true
         
         let tap = UITapGestureRecognizer(target: self.view, action:  #selector(UIView.endEditing)) //this kills the keyboard
         tap.cancelsTouchesInView = false
@@ -127,24 +141,27 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         }
         switch broadCat {
         case .foodBeverage: //hides all other buttons, displays chosen case
-            foodAndBevButton.isHidden = false
-            tableWareButton.isHidden = true
-            cleaningSuppliesButton.isHidden = true
+            foodAndBevCatButton.isHidden = false
+            tableWareCatButton.isHidden = true
+            cleaningSupplyCatButton.isHidden = true
             categorySelection = "food and beverage"
             
         case .tableware:
-            tableWareButton.isHidden = false
-            cleaningSuppliesButton.isHidden = true
-            foodAndBevButton.isHidden = true
+            tableWareCatButton.isHidden = false
+            cleaningSupplyCatButton.isHidden = true
+            foodAndBevCatButton.isHidden = true
             categorySelection = "tableware"
 
         default:
-            cleaningSuppliesButton.isHidden = false
-            foodAndBevButton.isHidden = true
-            tableWareButton.isHidden = true
+            cleaningSupplyCatButton.isHidden = false
+            foodAndBevCatButton.isHidden = true
+            tableWareCatButton.isHidden = true
             categorySelection = "cleaning supplies"
-            
         }
+        foodAndBevButton.isHidden = true
+        tableWareButton.isHidden = true
+        broadCatButton.isHidden = true
+        cleaningSuppliesButton.isHidden = true
 // will handle individual categories when tapped
     }
     
@@ -174,6 +191,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         default:
             return
         }
+        hideSubCat()
     }
     
     enum tableWares: String {
@@ -200,6 +218,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         default:
             return
         }
+        hideSubCat()
     }
     
     enum cleaningSupplies: String {
@@ -223,6 +242,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         default:
             return
         }
+        hideSubCat()
     }
     
     func showSimpleAlert() { //shows an alert confirming the addition of an item
@@ -236,5 +256,18 @@ class NewProductController: UIViewController, UITextFieldDelegate {
 
         self.present(alert, animated: true, completion: nil)
     }
-    
+    func hideSubCat() {
+        breadButton.isHidden = true
+        meatButton.isHidden = true
+        cheeseButton.isHidden = true
+        veggieButton.isHidden = true
+        condButton.isHidden = true
+        utensilsButton.isHidden = true
+        cAndPButton.isHidden = true
+        cupButton.isHidden = true
+        nappiesAndSauciesButton.isHidden = true
+        chemicalButton.isHidden = true
+        cleaningToolButton.isHidden = true
+        toiletButton.isHidden = true
+    }
 }

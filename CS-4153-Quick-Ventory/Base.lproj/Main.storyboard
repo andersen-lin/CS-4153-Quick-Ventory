@@ -211,21 +211,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3YP-yk-KLM">
-                                <rect key="frame" x="40" y="315" width="334" height="443"/>
+                                <rect key="frame" x="40" y="371" width="334" height="387"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvp-KT-lu3">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="103.33333333333333"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="89.333333333333329"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <state key="normal" title="New Inventory Items">
+                                        <state key="normal" title="User Profile">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Uls-VM-KaF" kind="show" id="v1O-IA-Lhp"/>
+                                            <segue destination="DWk-aT-UVL" kind="show" id="Fkp-3q-Dd9"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdj-9s-Nrl">
-                                        <rect key="frame" x="0.0" y="113.33333333333331" width="334" height="103.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="99.333333333333314" width="334" height="89.333333333333314"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <state key="normal" title="Inventory Items">
@@ -236,7 +236,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TVx-ff-bTY">
-                                        <rect key="frame" x="0.0" y="226.66666666666663" width="334" height="103"/>
+                                        <rect key="frame" x="0.0" y="198.66666666666663" width="334" height="89"/>
                                         <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                         <state key="normal" title="Inventory Reports">
@@ -247,20 +247,20 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtd-5S-SZ6">
-                                        <rect key="frame" x="0.0" y="339.66666666666663" width="334" height="103.33333333333331"/>
-                                        <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="297.66666666666663" width="334" height="89.333333333333314"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                        <state key="normal" title="User Profile">
+                                        <state key="normal" title="Sign Out">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="DWk-aT-UVL" kind="show" id="Y3G-nF-JdK"/>
+                                            <action selector="signOutButton:" destination="yBP-Ee-Td7" eventType="touchUpInside" id="Kec-3X-wIA"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2X-vs-Vta" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="50" width="374" height="225"/>
+                                <rect key="frame" x="20" y="106" width="374" height="225"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="225" id="6tC-Bg-ZSj"/>
@@ -280,6 +280,7 @@
                         <viewLayoutGuide key="safeArea" id="5ql-lR-O7e"/>
                     </view>
                     <navigationItem key="navigationItem" id="lPE-25-NRG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="backButton" destination="lPE-25-NRG" id="yk5-bc-MTZ"/>
                         <outlet property="chartView" destination="U2X-vs-Vta" id="7AW-8i-M59"/>
@@ -302,7 +303,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bt3-h9-kra">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="iru-Tm-5LB">
                                     <rect key="frame" x="0.0" y="146" width="414" height="44"/>
@@ -382,7 +383,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fCo-IF-Zzy">
-                                <rect key="frame" x="0.0" y="40" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="96" width="414" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJM-K9-mF5">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
@@ -484,7 +485,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7Yx-Z7-775">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="aCZ-i2-DNR">
                                     <rect key="frame" x="0.0" y="146" width="414" height="44"/>
@@ -561,7 +562,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Ac-vj-X6D">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="752"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="7ot-VY-O0n">
                                     <rect key="frame" x="0.0" y="146" width="414" height="44"/>
@@ -619,7 +620,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1hO-EQ-ZI8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kVk-Ni-4kZ"/>
+                    <navigationItem key="navigationItem" id="7Ns-9r-1KV">
+                        <barButtonItem key="rightBarButtonItem" title="New Product" id="3Hx-Zx-4i9">
+                            <connections>
+                                <segue destination="Uls-VM-KaF" kind="show" id="a14-xc-U6k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="productTableView" destination="3Ac-vj-X6D" id="7Ft-qC-1TB"/>
                         <segue destination="5I0-1H-KYX" kind="show" identifier="ToModify" id="wgS-lY-r9s"/>
@@ -638,13 +645,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vbY-WT-mKt">
-                                <rect key="frame" x="20" y="20" width="374" height="52"/>
+                                <rect key="frame" x="20" y="76" width="374" height="52"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="45"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="y99-UH-Nxq">
-                                <rect key="frame" x="174.33333333333334" y="77" width="65.333333333333343" height="29"/>
+                                <rect key="frame" x="174.33333333333334" y="133" width="65.333333333333343" height="29"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -684,7 +691,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHf-j1-FYu">
-                                <rect key="frame" x="154.66666666666666" y="114" width="104.99999999999997" height="35"/>
+                                <rect key="frame" x="154.66666666666666" y="170" width="104.99999999999997" height="35"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <state key="normal" title="Delete Item"/>
                                 <connections>
@@ -729,20 +736,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="User_Profile" translatesAutoresizingMaskIntoConstraints="NO" id="o7A-UQ-75l">
-                                <rect key="frame" x="87" y="20" width="240" height="204"/>
+                                <rect key="frame" x="87" y="76" width="240" height="204"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="TP6-FF-MKQ"/>
                                     <constraint firstAttribute="height" constant="204" id="rFU-Bu-9UI"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlaceHolder" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQI-GN-N4e">
-                                <rect key="frame" x="120.33333333333333" y="229" width="173.66666666666669" height="34.666666666666686"/>
+                                <rect key="frame" x="120.33333333333333" y="285" width="173.66666666666669" height="34.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2ER-CD-DtP">
-                                <rect key="frame" x="72.666666666666686" y="283.66666666666669" width="269" height="89"/>
+                                <rect key="frame" x="72.666666666666686" y="339.66666666666669" width="269" height="89"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant ID:   PlaceHolder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fao-kX-KAQ">
                                         <rect key="frame" x="0.0" y="0.0" width="269" height="23"/>
@@ -765,7 +772,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPU-Kc-ZJf">
-                                <rect key="frame" x="133" y="377.66666666666669" width="148" height="32"/>
+                                <rect key="frame" x="133" y="433.66666666666669" width="148" height="32"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                                 <state key="normal" title="Change Password"/>
                                 <connections>
@@ -807,12 +814,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Product Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="1tB-Zi-nD6">
-                                <rect key="frame" x="30" y="5" width="354" height="39"/>
+                                <rect key="frame" x="30" y="61" width="354" height="39"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W6f-yw-Dne">
-                                <rect key="frame" x="0.0" y="49" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="105" width="414" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2w-eH-P2U">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
@@ -864,7 +871,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qLY-D1-Mat">
-                                <rect key="frame" x="0.0" y="95" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="151" width="414" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQa-aP-wBy">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
@@ -938,7 +945,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lFl-JX-awV">
-                                <rect key="frame" x="0.0" y="141" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="197" width="414" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gip-NY-uqs">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
@@ -1001,7 +1008,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s9n-Z5-vD0">
-                                <rect key="frame" x="0.0" y="187" width="414" height="36"/>
+                                <rect key="frame" x="0.0" y="243" width="414" height="36"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qx-LF-8HX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="36"/>
@@ -1053,7 +1060,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTp-tG-qpb">
-                                <rect key="frame" x="174" y="298" width="66" height="30"/>
+                                <rect key="frame" x="174" y="354" width="66" height="30"/>
                                 <color key="backgroundColor" red="0.46666666670000001" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Add Item">
@@ -1091,10 +1098,26 @@
                     </view>
                     <navigationItem key="navigationItem" id="cMc-VI-njt"/>
                     <connections>
-                        <outlet property="cleaningSuppliesButton" destination="9qx-LF-8HX" id="csm-rz-bUa"/>
-                        <outlet property="foodAndBevButton" destination="DQa-aP-wBy" id="rVg-Hq-PBB"/>
+                        <outlet property="breadButton" destination="fwA-Ul-ULh" id="4MM-8s-Jca"/>
+                        <outlet property="broadCatButton" destination="o2w-eH-P2U" id="dP3-O6-yS1"/>
+                        <outlet property="cAndPButton" destination="5Eh-cJ-zXB" id="gwH-2E-SbC"/>
+                        <outlet property="cheeseButton" destination="9sd-Ro-pn1" id="E6N-7A-1hT"/>
+                        <outlet property="chemicalButton" destination="Jvd-4H-5av" id="P2y-vf-vEt"/>
+                        <outlet property="cleaningSuppliesButton" destination="xAx-9Y-YrL" id="ln8-9k-x52"/>
+                        <outlet property="cleaningSupplyCatButton" destination="9qx-LF-8HX" id="mMb-ni-iDz"/>
+                        <outlet property="cleaningToolButton" destination="zsk-i4-g5i" id="xyq-vX-cb1"/>
+                        <outlet property="condButton" destination="odz-ZR-6Q3" id="JpW-ds-P9i"/>
+                        <outlet property="cupButton" destination="hb7-zn-y3h" id="EMU-OG-v2b"/>
+                        <outlet property="foodAndBevButton" destination="Kmn-rH-kpz" id="P0I-s7-dAw"/>
+                        <outlet property="foodAndBevCatButton" destination="DQa-aP-wBy" id="6b0-mv-5fS"/>
+                        <outlet property="meatButton" destination="yXe-6N-Jgg" id="dIC-do-IhP"/>
+                        <outlet property="nappiesAndSauciesButton" destination="FFG-t3-AXt" id="xtx-4q-yG5"/>
                         <outlet property="productName" destination="1tB-Zi-nD6" id="tNP-vK-wpi"/>
-                        <outlet property="tableWareButton" destination="Gip-NY-uqs" id="U2Q-06-e14"/>
+                        <outlet property="tableWareButton" destination="4aE-Rx-QjS" id="AB3-hQ-Hcs"/>
+                        <outlet property="tableWareCatButton" destination="Gip-NY-uqs" id="6CG-qa-8AN"/>
+                        <outlet property="toiletButton" destination="toJ-5L-VZY" id="g1p-vA-u1k"/>
+                        <outlet property="utensilsButton" destination="oQB-1H-44q" id="DOd-Ta-o2a"/>
+                        <outlet property="veggieButton" destination="Ve6-AY-jnv" id="zm0-0E-64B"/>
                         <outletCollection property="broadCategories" destination="Kmn-rH-kpz" collectionClass="NSMutableArray" id="7tq-Cu-uEh"/>
                         <outletCollection property="broadCategories" destination="4aE-Rx-QjS" collectionClass="NSMutableArray" id="N0l-5s-Dj8"/>
                         <outletCollection property="broadCategories" destination="xAx-9Y-YrL" collectionClass="NSMutableArray" id="eWL-mm-tNl"/>

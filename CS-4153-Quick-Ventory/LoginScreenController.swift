@@ -28,8 +28,11 @@ class LoginScreenController: UIViewController,UITextFieldDelegate {
     var selectedButton = UIButton()
     var dataSource = [String]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+    
+        super.viewWillAppear(true)
+        eUN.text = ""
+        ePW.text = ""
     
         /* Tapping outside input dismisses keyboard. */
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
