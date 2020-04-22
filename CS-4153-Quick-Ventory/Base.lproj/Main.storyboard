@@ -683,12 +683,22 @@
                                     <constraint firstItem="vaM-71-4Th" firstAttribute="height" secondItem="4Lf-bl-SBO" secondAttribute="height" id="xX2-FZ-sr0"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHf-j1-FYu">
+                                <rect key="frame" x="154.66666666666666" y="114" width="104.99999999999997" height="35"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="Delete Item"/>
+                                <connections>
+                                    <action selector="deleteProduct:" destination="5I0-1H-KYX" eventType="touchUpInside" id="kWt-9L-UNf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vbY-WT-mKt" firstAttribute="top" secondItem="erj-kX-RJA" secondAttribute="top" constant="20" id="1N4-Mo-azd"/>
+                            <constraint firstItem="lHf-j1-FYu" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" id="2mP-UJ-EBa"/>
                             <constraint firstItem="erj-kX-RJA" firstAttribute="bottom" secondItem="2hf-HJ-cvQ" secondAttribute="bottom" constant="20" id="43S-ne-oAX"/>
                             <constraint firstItem="erj-kX-RJA" firstAttribute="trailing" secondItem="2hf-HJ-cvQ" secondAttribute="trailing" constant="100" id="4xN-DK-sSc"/>
+                            <constraint firstItem="lHf-j1-FYu" firstAttribute="top" secondItem="y99-UH-Nxq" secondAttribute="bottom" constant="8" id="JVY-g7-4NE"/>
                             <constraint firstItem="vbY-WT-mKt" firstAttribute="leading" secondItem="erj-kX-RJA" secondAttribute="leading" constant="20" id="Kaw-zE-wyi"/>
                             <constraint firstItem="y99-UH-Nxq" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" id="Vh7-ys-w7v"/>
                             <constraint firstItem="XLm-JQ-njp" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" constant="2" id="arb-PO-GMo"/>

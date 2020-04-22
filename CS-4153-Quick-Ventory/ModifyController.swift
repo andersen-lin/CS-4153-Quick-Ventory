@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ModifyController: UIViewController {
 
@@ -41,6 +42,45 @@ class ModifyController: UIViewController {
         deltaQuantity -= 1
     }
 
+    @IBAction func deleteProduct(_ sender: UIButton) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Item") //fetching items
+                
+        do {
+            let result = try managedContext.fetch(fetchRequest)
+            for data in result as! [NSManagedObject] {
+                let itemName = (data.value(forKey: "name") as! String)
+                if itemName == passedProduct[0] {
+                    managedContext.delete(data)
+                    showSimpleAlert()
+                    
+                }
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+        }catch {
+            print("Failed")
+        }
+        
+    }
+    
+    func showSimpleAlert() { //shows an alert confirming the addition of an item
+        let alert = UIAlertController(title: "Success", message: "Items matching name: \(passedProduct[0]) have been deleted from the inventory", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+
+            self.dismiss(animated: true, completion: nil)//Cancel Action
+        }))
+
+        self.present(alert, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
