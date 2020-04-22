@@ -41,8 +41,9 @@ class ProductController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    
     override func viewWillAppear(_ animated: Bool) {
+                
         // Fetch the database contents
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Item")
         let predicate: NSPredicate
@@ -82,6 +83,7 @@ class ProductController: UITableViewController {
         } catch let error as NSError {
             print("Cannot load data: \(error)")
         }
+        productTableView.reloadData()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
