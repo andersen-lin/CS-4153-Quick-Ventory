@@ -43,7 +43,6 @@ class ProductController: UITableViewController {
     // MARK: - Table view data source
 
     override func viewWillAppear(_ animated: Bool) {
-        
         // Fetch the database contents
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Item")
         let predicate: NSPredicate

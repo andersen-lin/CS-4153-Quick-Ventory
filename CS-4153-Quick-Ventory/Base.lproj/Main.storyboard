@@ -442,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV1-jT-dPY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1745" y="818"/>
+            <point key="canvasLocation" x="1741" y="818"/>
         </scene>
         <!--Circle-->
         <scene sceneID="2HH-5V-0XA">
@@ -1137,7 +1137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xMK-fS-KYv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.985507246377" y="-798.21428571428567"/>
+            <point key="canvasLocation" x="4429" y="-567"/>
         </scene>
         <!--Sign Up Register Restaurant Controller-->
         <scene sceneID="4M2-CJ-Loj">

@@ -248,7 +248,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
     func showSimpleAlert() { //shows an alert confirming the addition of an item
         let alert = UIAlertController(title: "Success", message: "Item has been successfully added to the inventory", preferredStyle: UIAlertController.Style.alert)
         
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
             self.navigationController?.popViewController(animated: true)
 
             self.dismiss(animated: true, completion: nil)//Cancel Action
