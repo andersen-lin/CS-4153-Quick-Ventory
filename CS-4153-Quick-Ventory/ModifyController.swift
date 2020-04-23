@@ -11,7 +11,13 @@ import CoreData
 
 class ModifyController: UIViewController {
 
+    var dataSource: [NSManagedObject] = []
+    
+    var appDelegate: AppDelegate?
+    var context: NSManagedObjectContext?
+    
     var passedProduct: [String]!
+    var currentQuantity: Int = 0
     var deltaQuantity: Int = 0 {
         willSet {
             if (newValue >= 0) {
@@ -23,23 +29,73 @@ class ModifyController: UIViewController {
     }
     
     @IBOutlet weak var productInfo: UILabel!
-    @IBOutlet weak var categoryInfo: UILabel!
+    @IBOutlet weak var currentQty: UILabel!
     @IBOutlet weak var quantity: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
+        
         productInfo.text = passedProduct[0]
-        categoryInfo.text = passedProduct[1]
     }
  
+    override func viewWillAppear(_ animated: Bool) {
+        
+        // Load and display the quantity of this item
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "ItemStock")
+        let predicate = NSPredicate(format: "stockToItem.name == \"" + passedProduct[0] + "\"")
+        fetchRequest.predicate = predicate
+        
+        do {
+            let result = try context?.fetch(fetchRequest) ?? []
+            for data in result as! [ItemStock] { // There should be only one fetched record
+                currentQty.text = "Quantity: " + String(data.qty)
+                currentQuantity = Int(data.qty)
+            }
+        } catch let error as NSError {
+            print("Cannot load data: \(error)")
+        }
+    }
+    
     @IBAction func addProduct(_ sender: Any) {
         deltaQuantity += 1
     }
     
     @IBAction func deductProduct(_ sender: Any) {
         deltaQuantity -= 1
+    }
+    
+    @IBAction func updateProduct() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ItemStock")
+        let predicate = NSPredicate(format: "stockToItem.name == \"" + passedProduct[0] + "\"")
+        fetchRequest.predicate = predicate
+        
+        do {
+            let result = try context?.fetch(fetchRequest) ?? []
+            for data in result as! [ItemStock] {
+                data.qty = Int64(currentQuantity + deltaQuantity)
+            }
+        } catch {
+            print("Cannot load data: \(error)")
+        }
+        do {
+            try context?.save()
+        } catch let error as NSError {
+            print("Cannot save: \(error)")
+        }
+        
+        let alert = UIAlertController(title: "Success", message: "Quantity has been successfully updated", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.popViewController(animated: true)
+
+            self.dismiss(animated: true, completion: nil)//Cancel Action
+        }))
+
+        self.present(alert, animated: true, completion: nil)
     }
 
     @IBAction func deleteProduct(_ sender: UIButton) {

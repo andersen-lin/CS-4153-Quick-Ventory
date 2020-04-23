@@ -656,25 +656,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-JQ-njp">
-                                <rect key="frame" x="150" y="391" width="118" height="119"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="100"/>
-                                <color key="textColor" red="0.75602064220183485" green="0.0" blue="0.057889172565699108" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="2hf-HJ-cvQ">
-                                <rect key="frame" x="100" y="718" width="214" height="70"/>
+                                <rect key="frame" x="70" y="718" width="274" height="70"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaM-71-4Th">
-                                        <rect key="frame" x="0.0" y="1.6666666666666643" width="103" height="67"/>
+                                        <rect key="frame" x="0.0" y="1.6666666666666643" width="86" height="67"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" backgroundImage="minus.rectangle" catalog="system"/>
+                                        <state key="normal" backgroundImage="minus.rectangle" catalog="system">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="deductProduct:" destination="5I0-1H-KYX" eventType="touchUpInside" id="Hhi-wa-MNw"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biQ-cW-G8N">
+                                        <rect key="frame" x="94" y="1.6666666666666643" width="86" height="67"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" backgroundImage="checkmark.rectangle" catalog="system">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="updateProduct" destination="5I0-1H-KYX" eventType="touchUpInside" id="J2B-mJ-35y"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Lf-bl-SBO">
-                                        <rect key="frame" x="111" y="1.6666666666666643" width="103" height="67"/>
+                                        <rect key="frame" x="188" y="1.6666666666666643" width="86" height="67"/>
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" backgroundImage="plus.rectangle" catalog="system">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -686,6 +692,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vaM-71-4Th" firstAttribute="width" secondItem="4Lf-bl-SBO" secondAttribute="width" id="1pn-uP-yih"/>
+                                    <constraint firstItem="biQ-cW-G8N" firstAttribute="width" secondItem="vaM-71-4Th" secondAttribute="width" id="Cdo-It-htk"/>
                                     <constraint firstAttribute="height" constant="70" id="lun-bN-y0j"/>
                                     <constraint firstItem="vaM-71-4Th" firstAttribute="height" secondItem="4Lf-bl-SBO" secondAttribute="height" id="xX2-FZ-sr0"/>
                                 </constraints>
@@ -698,13 +705,19 @@
                                     <action selector="deleteProduct:" destination="5I0-1H-KYX" eventType="touchUpInside" id="kWt-9L-UNf"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="+0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLm-JQ-njp">
+                                <rect key="frame" x="150" y="364" width="118" height="119"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="100"/>
+                                <color key="textColor" red="0.75602064220183485" green="0.0" blue="0.057889172565699108" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="vbY-WT-mKt" firstAttribute="top" secondItem="erj-kX-RJA" secondAttribute="top" constant="20" id="1N4-Mo-azd"/>
                             <constraint firstItem="lHf-j1-FYu" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" id="2mP-UJ-EBa"/>
                             <constraint firstItem="erj-kX-RJA" firstAttribute="bottom" secondItem="2hf-HJ-cvQ" secondAttribute="bottom" constant="20" id="43S-ne-oAX"/>
-                            <constraint firstItem="erj-kX-RJA" firstAttribute="trailing" secondItem="2hf-HJ-cvQ" secondAttribute="trailing" constant="100" id="4xN-DK-sSc"/>
+                            <constraint firstItem="erj-kX-RJA" firstAttribute="trailing" secondItem="2hf-HJ-cvQ" secondAttribute="trailing" constant="70" id="4xN-DK-sSc"/>
                             <constraint firstItem="lHf-j1-FYu" firstAttribute="top" secondItem="y99-UH-Nxq" secondAttribute="bottom" constant="8" id="JVY-g7-4NE"/>
                             <constraint firstItem="vbY-WT-mKt" firstAttribute="leading" secondItem="erj-kX-RJA" secondAttribute="leading" constant="20" id="Kaw-zE-wyi"/>
                             <constraint firstItem="y99-UH-Nxq" firstAttribute="centerX" secondItem="BsB-BU-LVk" secondAttribute="centerX" id="Vh7-ys-w7v"/>
@@ -712,13 +725,13 @@
                             <constraint firstItem="erj-kX-RJA" firstAttribute="trailing" secondItem="vbY-WT-mKt" secondAttribute="trailing" constant="20" id="ex8-Kr-s5a"/>
                             <constraint firstItem="XLm-JQ-njp" firstAttribute="centerY" secondItem="BsB-BU-LVk" secondAttribute="centerY" constant="2.5" id="t5o-cu-Vwh"/>
                             <constraint firstItem="y99-UH-Nxq" firstAttribute="top" secondItem="vbY-WT-mKt" secondAttribute="bottom" constant="5" id="urY-lI-n5S"/>
-                            <constraint firstItem="2hf-HJ-cvQ" firstAttribute="leading" secondItem="erj-kX-RJA" secondAttribute="leading" constant="100" id="vPz-Pu-gD5"/>
+                            <constraint firstItem="2hf-HJ-cvQ" firstAttribute="leading" secondItem="erj-kX-RJA" secondAttribute="leading" constant="70" id="vPz-Pu-gD5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="erj-kX-RJA"/>
                     </view>
                     <navigationItem key="navigationItem" id="XkK-0p-SmN"/>
                     <connections>
-                        <outlet property="categoryInfo" destination="y99-UH-Nxq" id="TNC-ew-uTX"/>
+                        <outlet property="currentQty" destination="y99-UH-Nxq" id="EZe-LL-Yn0"/>
                         <outlet property="productInfo" destination="vbY-WT-mKt" id="nhq-hS-rcC"/>
                         <outlet property="quantity" destination="XLm-JQ-njp" id="2IZ-Ul-3IA"/>
                     </connections>
@@ -1572,6 +1585,7 @@
     <resources>
         <image name="QVLogo_dark@4x" width="300" height="300"/>
         <image name="User_Profile" width="300" height="300"/>
+        <image name="checkmark.rectangle" catalog="system" width="128" height="93"/>
         <image name="minus.rectangle" catalog="system" width="128" height="93"/>
         <image name="plus.rectangle" catalog="system" width="128" height="93"/>
     </resources>

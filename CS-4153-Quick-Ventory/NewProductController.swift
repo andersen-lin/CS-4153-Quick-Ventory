@@ -84,6 +84,20 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         item.setValue(categorySelection, forKey: "category_image_name")
         item.setValue(subCategorySelection, forKey: "sub_category_image_name")
 
+        // Initialize a quantity value for the new item
+        let stockEntity = ItemStock(context: context)
+        stockEntity.qty = 1
+        let fetchReq = NSFetchRequest<NSFetchRequestResult>(entityName: "Item")
+        fetchReq.predicate = NSPredicate(format: "name == \"" + productName.text! + "\"")
+        do {
+            let result = try context.fetch(fetchReq)
+            for data in result as! [Item] { // Should be only one record for a item
+                stockEntity.stockToItem = data
+            }
+        } catch {
+            print("Cannot load data: \(error)")
+        }
+        
         do {
            try context.save()
         } catch let error as NSError {
