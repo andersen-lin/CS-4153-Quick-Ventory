@@ -65,7 +65,9 @@ class ModifyController: UIViewController {
     }
     
     @IBAction func deductProduct(_ sender: Any) {
-        deltaQuantity -= 1
+        if ((currentQuantity + deltaQuantity) > 1) {
+            deltaQuantity -= 1
+        }
     }
     
     @IBAction func updateProduct() {
