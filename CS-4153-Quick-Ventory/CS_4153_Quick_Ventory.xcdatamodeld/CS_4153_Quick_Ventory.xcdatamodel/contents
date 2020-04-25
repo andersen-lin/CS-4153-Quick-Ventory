@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G3020" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="category_image_name" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="product_image_name" optional="YES" attributeType="String"/>
         <attribute name="sub_category" optional="YES" attributeType="String"/>
         <attribute name="sub_category_image_name" optional="YES" attributeType="String"/>
         <relationship name="itemToStock" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ItemStock" inverseName="stockToItem" inverseEntity="ItemStock"/>
@@ -41,10 +42,10 @@
         <relationship name="userCredR" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userCredR" inverseEntity="User"/>
     </entity>
     <elements>
+        <element name="Item" positionX="-185.9765625" positionY="162.3984375" width="99.92578125" height="163"/>
+        <element name="ItemStock" positionX="7.9765625" positionY="190.53515625" width="128" height="118"/>
+        <element name="Restaurant" positionX="-185.19140625" positionY="-61.00390625" width="128" height="178"/>
         <element name="User" positionX="-190.890625" positionY="-232.25" width="128" height="133"/>
         <element name="UserCredentials" positionX="4.8359375" positionY="-227.98046875" width="128" height="88"/>
-        <element name="Restaurant" positionX="-185.19140625" positionY="-61.00390625" width="128" height="178"/>
-        <element name="Item" positionX="-185.9765625" positionY="162.3984375" width="99.92578125" height="148"/>
-        <element name="ItemStock" positionX="7.9765625" positionY="190.53515625" width="128" height="118"/>
     </elements>
 </model>

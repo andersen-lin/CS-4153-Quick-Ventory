@@ -21,6 +21,8 @@
 		40892D2A2440E4F80048E40C /* InventoryReportsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40892D292440E4F80048E40C /* InventoryReportsController.swift */; };
 		40892D34244686F20048E40C /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40892D33244686F20048E40C /* ProductCell.swift */; };
 		40892D36244687120048E40C /* ProductController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40892D35244687120048E40C /* ProductController.swift */; };
+		40ACC82324547F9A001C5408 /* ItemSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACC82224547F9A001C5408 /* ItemSelectionController.swift */; };
+		40ACC82524548000001C5408 /* ItemSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40ACC82424548000001C5408 /* ItemSelectionCell.swift */; };
 		84109BE9243E432C00CE4814 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BE8243E432C00CE4814 /* LoginScreenController.swift */; };
 		84109BEE243E435600CE4814 /* BroadCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BEA243E435600CE4814 /* BroadCategoryCell.swift */; };
 		84109BEF243E435600CE4814 /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84109BEB243E435600CE4814 /* CategoryController.swift */; };
@@ -50,6 +52,8 @@
 		40892D292440E4F80048E40C /* InventoryReportsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryReportsController.swift; sourceTree = "<group>"; };
 		40892D33244686F20048E40C /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		40892D35244687120048E40C /* ProductController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductController.swift; sourceTree = "<group>"; };
+		40ACC82224547F9A001C5408 /* ItemSelectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectionController.swift; sourceTree = "<group>"; };
+		40ACC82424548000001C5408 /* ItemSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSelectionCell.swift; sourceTree = "<group>"; };
 		7C53EBFE105E593248BCC189 /* Pods_CS_4153_Quick_Ventory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_4153_Quick_Ventory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84109BE8243E432C00CE4814 /* LoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
 		84109BEA243E435600CE4814 /* BroadCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BroadCategoryCell.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				2C7CF6D824386D9F00613119 /* SceneDelegate.swift */,
 				2C7CF6DA24386D9F00613119 /* ViewController.swift */,
 				2C7CF6DC24386D9F00613119 /* Main.storyboard */,
+				40ACC82224547F9A001C5408 /* ItemSelectionController.swift */,
+				40ACC82424548000001C5408 /* ItemSelectionCell.swift */,
 				40892D33244686F20048E40C /* ProductCell.swift */,
 				40892D35244687120048E40C /* ProductController.swift */,
 				2C7783FA244426EC002F8B54 /* ModifyController.swift */,
@@ -260,6 +266,7 @@
 				40892D28243E301C0048E40C /* NewProductController.swift in Sources */,
 				40892D36244687120048E40C /* ProductController.swift in Sources */,
 				40465F122448925C009F75DE /* CircleChartController.swift in Sources */,
+				40ACC82324547F9A001C5408 /* ItemSelectionController.swift in Sources */,
 				84109BEE243E435600CE4814 /* BroadCategoryCell.swift in Sources */,
 				40465F102448923D009F75DE /* BarChartController.swift in Sources */,
 				84109BF5243E436400CE4814 /* UserProfileController.swift in Sources */,
@@ -271,6 +278,7 @@
 				84109BF1243E435600CE4814 /* BroadCategoryController.swift in Sources */,
 				84393BCB2441442900B031DA /* SignUpUserViewController.swift in Sources */,
 				84109BEF243E435600CE4814 /* CategoryController.swift in Sources */,
+				40ACC82524548000001C5408 /* ItemSelectionCell.swift in Sources */,
 				2C7CF6D924386D9F00613119 /* SceneDelegate.swift in Sources */,
 				40892D34244686F20048E40C /* ProductCell.swift in Sources */,
 				40892D2A2440E4F80048E40C /* InventoryReportsController.swift in Sources */,

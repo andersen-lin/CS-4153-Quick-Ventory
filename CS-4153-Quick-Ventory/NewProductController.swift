@@ -30,6 +30,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cupButton: UIButton!
     @IBOutlet weak var nappiesAndSauciesButton: UIButton!
     
+    @IBOutlet weak var imageSelectionButton: UIButton!
     @IBOutlet var cleaningSuppliesCategories: [UIButton]!
     @IBOutlet weak var cleaningSupplyCatButton: UIButton!
     @IBOutlet weak var cleaningSuppliesButton: UIButton!
@@ -41,12 +42,14 @@ class NewProductController: UIViewController, UITextFieldDelegate {
     
     public var categorySelection :String = "" //holders for user selection
     public var subCategorySelection : String = ""
+    public var selectedImage: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         foodAndBevCatButton.isHidden = true //hiding buttons on open
         tableWareCatButton.isHidden = true
         cleaningSupplyCatButton.isHidden = true
+        imageSelectionButton.isHidden = true
         
         let tap = UITapGestureRecognizer(target: self.view, action:  #selector(UIView.endEditing)) //this kills the keyboard
         tap.cancelsTouchesInView = false
@@ -83,7 +86,7 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         item.setValue(subCategorySelection, forKey: "sub_category")
         item.setValue(categorySelection, forKey: "category_image_name")
         item.setValue(subCategorySelection, forKey: "sub_category_image_name")
-
+        item.setValue(selectedImage, forKey: "product_image_name")
         // Initialize a quantity value for the new item
         let stockEntity = ItemStock(context: context)
         stockEntity.qty = 1
@@ -283,5 +286,11 @@ class NewProductController: UIViewController, UITextFieldDelegate {
         chemicalButton.isHidden = true
         cleaningToolButton.isHidden = true
         toiletButton.isHidden = true
+        foodAndBevCatButton.isHidden = true //hiding buttons on open
+        tableWareCatButton.isHidden = true
+        cleaningSupplyCatButton.isHidden = true
+        imageSelectionButton.isHidden = false
     }
+    
+    @IBAction func unwindToNewProductController(segue:UIStoryboardSegue) {}
 }

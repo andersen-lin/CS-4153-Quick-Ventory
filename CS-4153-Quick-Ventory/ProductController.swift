@@ -13,6 +13,10 @@ class ProductController: UITableViewController {
 
     var dataSource: [NSManagedObject] = []
     
+    let itemSource = ["Breads", "Meats", "Cheeses", "Vegetables", "Condiments", "Utensils", "Containers and Plates", "Cups", "Napkins and Sauce Packets", "Chemicals", "Toiletries", "Cleaning Tools"]
+    
+    let itemImage = [UIImage(named: "breads"), UIImage(named: "meats"), UIImage(named: "cheeses"), UIImage(named: "vegetables"), UIImage(named: "condiments"), UIImage(named: "utensils"), UIImage(named: "platescontainers"), UIImage(named: "cups"), UIImage(named: "saucenapkin"), UIImage(named: "chemicals"), UIImage(named: "toiletries"), UIImage(named: "cleaningtools")]
+    
     var appDelegate: AppDelegate?
     var context: NSManagedObjectContext?
     
@@ -102,6 +106,34 @@ class ProductController: UITableViewController {
         
         // Configure the cell...
         cell.ProductLabel?.text = dataSource[indexPath[1]].value(forKey: "name") as? String
+        
+        switch (dataSource[indexPath[1]].value(forKey: "product_image_name") as? String) {
+        case "Breads":
+            cell.ProductImage?.image = itemImage[0]
+        case "Meats":
+            cell.ProductImage?.image = itemImage[1]
+        case "Cheeses":
+            cell.ProductImage?.image = itemImage[2]
+        case "Vegetables":
+            cell.ProductImage?.image = itemImage[3]
+        case "Condiments":
+            cell.ProductImage?.image = itemImage[4]
+        case "Utensils":
+            cell.ProductImage?.image = itemImage[5]
+        case "Containers and Plates":
+            cell.ProductImage?.image = itemImage[6]
+        case "Cups":
+            cell.ProductImage?.image = itemImage[7]
+        case "Napkins and Sauce Packets":
+            cell.ProductImage?.image = itemImage[8]
+        case "Chemicals":
+            cell.ProductImage?.image = itemImage[9]
+        case "Toiletries":
+            cell.ProductImage?.image = itemImage[10]
+        default:
+            cell.ProductImage?.image = itemImage[11]
+        }
+        
         
         return cell
     }
